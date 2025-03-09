@@ -41,6 +41,7 @@
   padding: 10px 20px;
   background-color: #ECE0D1;
   color: #492310;
+  
 }
 
 /* Left Links */
@@ -60,8 +61,11 @@
   border: none;
   color: #492310;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   padding: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Dropdown Menu */

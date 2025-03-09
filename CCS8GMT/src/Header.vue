@@ -12,8 +12,8 @@ import NavBar from './components/NavBar.vue'
 <style>
 header {
     width: 1280px;
-  line-height: 1.5;
-  max-height: 100vh;
+    line-height: 1.5;
+    max-height: 100vh;
 }
 
 @media (min-width: 1200px) {
