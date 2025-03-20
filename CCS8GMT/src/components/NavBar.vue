@@ -5,18 +5,18 @@
       <div class="dropdown">
         <button class="nav-item">ABOUT</button>
         <div class="dropdown-menu">
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Frequently Asked Questions</a>
-          <a href="#">Site Map</a>
+          <span @click="navigateTo('/about')">About Us</span>
+          <span @click="navigateTo('/contact')">Contact Us</span>
+          <span @click="navigateTo('/faq')">Frequently Asked Questions</span>
+          <span @click="navigateTo('/site-map')">Site Map</span>
         </div>
       </div>
 
       <div class="dropdown">
         <button class="nav-item">RECIPES</button>
         <div class="dropdown-menu">
-          <a href="#">Caffeine</a>
-          <a href="#">Non-Caffeine</a>
+          <span @click="navigateTo('/recipes/caffeine')">Caffeine</span>
+          <span @click="navigateTo('/recipes/non-caffeine')">Non-Caffeine</span>
         </div>
       </div>
     </div>
@@ -32,8 +32,18 @@
   </nav>
 </template>
 
-<style>
-/* Navbar Container */ 
+<script>
+export default {
+  methods: {
+    navigateTo(route) {
+      this.$router.push(route);
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* Navbar Container */
 .navbar {
   display: flex;
   align-items: center;
@@ -41,7 +51,6 @@
   padding: 10px 20px;
   background-color: #ECE0D1;
   color: #492310;
-  
 }
 
 /* Left Links */
@@ -88,15 +97,15 @@
 }
 
 /* Dropdown Items */
-.dropdown-menu a {
+.dropdown-menu span {
   display: block;
   padding: 10px;
-  text-decoration: none;
+  cursor: pointer;
   color: black;
   transition: background 0.2s;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu span:hover {
   background-color: #ddd;
 }
 
