@@ -1,3 +1,8 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
+
+
 <template>
   <nav class="navbar">
     <!-- Left Links -->
@@ -5,7 +10,9 @@
       <div class="dropdown">
         <button class="nav-item">ABOUT</button>
         <div class="dropdown-menu">
-          <a href="#">About Us</a>
+          <RouterLink to="/about">
+            About Us
+          </RouterLink>
           <a href="#">Contact Us</a>
           <a href="#">Frequently Asked Questions</a>
           <a href="#">Site Map</a>
@@ -15,7 +22,9 @@
       <div class="dropdown">
         <button class="nav-item">RECIPES</button>
         <div class="dropdown-menu">
-          <a href="#">Caffeine</a>
+          <RouterLink to="/caffeinatedCoffee">
+            Caffeine
+          </RouterLink>
           <a href="#">Non-Caffeine</a>
         </div>
       </div>
