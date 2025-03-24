@@ -1,20 +1,8 @@
 <template>
     <div class="drink-details">
-        <header class="drink-header">
-            <nav>
-                <ul>
-                    <li><router-link to="/about">About Us</router-link></li>
-                    <li><router-link to="/faq">FAQ</router-link></li>
-                    <li><router-link to="/sitemap">Site Map</router-link></li>
-                    <li><router-link to="/recipes">Recipes</router-link></li>
-                </ul>
-                <input type="text" placeholder="Search..." />
-            </nav>
-        </header>
 
         <div class="main-content">
             <h1 class="content-name">{{ drinkData.content_name }}</h1>
-
             <!-- Drink Name and Image -->
             <div class="drink-info">
                 <div>
@@ -132,25 +120,6 @@ export default {
 </script>
 
 <style scoped>
-/* Header */
-header {
-    background: #f5ebe0;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-}
-
-nav input {
-    padding: 5px;
-}
-
 /* Drink Details */
 .drink-details {
     background: #f9f5f0;

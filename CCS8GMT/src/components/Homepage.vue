@@ -158,7 +158,6 @@
     align-items: center;
     gap: 15px;
     width: 100%;
-    max-width: 
 }
 
 .drink-card-title {
