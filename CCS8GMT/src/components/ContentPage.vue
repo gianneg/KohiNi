@@ -1,8 +1,8 @@
 <template>
     <div class="drink-details">
-
-        <div class="main-content">
+        <div class="main-content" v-if="drinkData">
             <h1 class="content-name">{{ drinkData.content_name }}</h1>
+
             <!-- Drink Name and Image -->
             <div class="drink-info">
                 <div>
@@ -58,6 +58,10 @@
             <h3 class="similar-title">A few similar drinks</h3>
             <DrinkCarousel :drinks="similarDrinks" />
         </div>
+        <!-- Loading Spinner -->
+        <div v-else>
+            <p>Loading...</p>
+        </div>
     </div>
 </template>
 
@@ -70,16 +74,7 @@ export default {
     components: { DrinkCarousel },
     data() {
         return {
-            drinkData: {
-                content_name: "",
-                drink_name: "",
-                description: "",
-                image_url: "",
-                ingredients: [],
-                equipment_used: [],
-                instructions: [],
-                fun_fact: "",
-            },
+            drinkData: null,
             similarDrinks: [],
             sections: {
                 ingredients: false,
@@ -94,19 +89,27 @@ export default {
                 .from("drinks")
                 .select("*")
                 .eq("id", this.$route.params.id)
-                .single();
+                .single(); 
 
-            if (error) console.error("Error fetching drink data:", error);
-            else this.drinkData = data;
+            if (error) {
+                console.error("Error fetching drink data:", error);
+            } else {
+                this.drinkData = data;
+            }
         },
+        // Fetch similar drinks to display in the carousel
         async fetchSimilarDrinks() {
             const { data, error } = await supabase
                 .from("drinks")
                 .select("id, drink_name, image_url")
+                .neq("id", this.$route.params.id)
                 .limit(6);
 
-            if (error) console.error("Error fetching similar drinks:", error);
-            else this.similarDrinks = data;
+            if (error) {
+                console.error("Error fetching similar drinks:", error);
+            } else {
+                this.similarDrinks = data;
+            }
         },
         toggleSection(section) {
             this.sections[section] = !this.sections[section];
