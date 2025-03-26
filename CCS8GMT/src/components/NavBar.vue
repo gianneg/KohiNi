@@ -25,7 +25,9 @@ import { RouterLink } from 'vue-router';
           <RouterLink to="/caffeinatedCoffee">
             Caffeine
           </RouterLink>
-          <a href="#">Non-Caffeine</a>
+          <RouterLink to="/noncaffeinatedCoffee">
+            Non-Caffeine
+          </RouterLink>
         </div>
       </div>
     </div>

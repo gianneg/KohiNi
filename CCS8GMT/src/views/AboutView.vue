@@ -5,7 +5,7 @@ import AboutUs from '../components/AboutUs.vue';
 
 <template>
   <div class="about">
-  <AboutUs />
+    <AboutUs />
   </div>
 </template>
 
