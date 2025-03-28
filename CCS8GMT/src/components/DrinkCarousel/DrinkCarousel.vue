@@ -61,72 +61,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300');
-
-.carousel-container {
-  background-color: #C1A088;
-  padding-top: 1px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
-.carousel-title {
-  font-size: 48px;
-  color: white;
-  font-family: Platypi;
-  font-weight: 300;
-  margin-bottom: 15px;
-}
-
-.carousel-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FFF8F0;
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  max-width: 700px;
-  margin: auto;
-}
-
-.carousel {
-  display: flex;
-  gap: 15px;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  width: 80%;
-  padding: 10px 0;
-  white-space: nowrap;
-}
-
-.carousel-item {
-  flex: 0 0 auto;
-  width: 100px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ccc;
-  background-color: white;
-  text-decoration: none;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-}
-
-.carousel-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #5d3a2b;
-  padding: 10px;
-}
-
-.carousel-btn:hover {
-  color: black;
-}
+@import './DrinkCarouselBase.css'; /*Desktop*/
+@import './DrinkCarouselLargeMobile.css'; /*768px*/
+@import './DrinkCarouselSmallMobile.css'; /*480px*/
 </style>

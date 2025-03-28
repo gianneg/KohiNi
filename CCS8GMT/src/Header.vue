@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import NavBar from './components/NavBar.vue'
+import NavBar from './components/NavBar/NavBar.vue'
 </script>
 
 <template>
@@ -11,6 +11,7 @@ import NavBar from './components/NavBar.vue'
 
 <style>
 header {
+    margin-top: 0px;
     width: 1280px;
     line-height: 1.5;
     max-height: 100vh;
