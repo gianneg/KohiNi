@@ -68,7 +68,7 @@
 <script>
 import { ref, onMounted } from "vue";
 import { supabase } from "../lib/supabase";
-import DrinkCarousel from "./DrinkCarousel.vue";
+import DrinkCarousel from "./DrinkCarousel/DrinkCarousel.vue";
 
 export default {
     components: { DrinkCarousel },
