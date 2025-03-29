@@ -1,7 +1,8 @@
 body {
   background-color: #FFF5E8;
+  margin: 0%;
 }
 
 .page-container {
-  width: 1280px;
+  width: 100%;
 }
