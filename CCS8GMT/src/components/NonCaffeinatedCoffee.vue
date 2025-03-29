@@ -12,13 +12,11 @@
                     <ul class="card-list swiper-wrapper">
                         <li class="card-item swiper-slide">
                             <div class="card-link">
-                                <div class="drink-name">
-                                    <h3>Drink 1</h3>
-                                </div>
-                                <img src="/images/cutecat.jpg" alt="Card Image" class="card-image1">
+                                <h3 class="drink-name">Drink 1</h3>
+                                <img src="/images/NonCaffeinatedCoffee/Caramel-Hot-Chocolate.jpg" alt="Card Image" class="card-image">
                                 <div class="image-holder"></div>
                                 <div class="drink-info">
-                                    <h2 class="card-title">Cocoa Caramel</h2>
+                                    <h2 class="card-title">Caramel Hot Chocolate</h2>
                                     <hr class="hr-line" />
                                     <button class="card-button">Discover</button>
                                 </div>
@@ -26,13 +24,11 @@
                         </li>
                         <li class="card-item swiper-slide">
                             <div class="card-link">
-                                <div class="drink-name">
-                                    <h3>Drink 1</h3>
-                                </div>
-                                <img src="/images/cutecat.jpg" alt="Card Image" class="card-image1">
+                                <h3 class="drink-name">Drink 1</h3>
+                                <img src="/images/NonCaffeinatedCoffee/Cinnamon-Tea-Latte.jpg" alt="Card Image" class="card-image">
                                 <div class="image-holder"></div>
                                 <div class="drink-info">
-                                    <h2 class="card-title">Cocoa Caramel</h2>
+                                    <h2 class="card-title">Cinnamon Tea Latte</h2>
                                     <hr class="hr-line" />
                                     <button class="card-button">Discover</button>
                                 </div>
@@ -40,13 +36,11 @@
                         </li>
                         <li class="card-item swiper-slide">
                             <div class="card-link">
-                                <div class="drink-name">
-                                    <h3>Drink 1</h3>
-                                </div>
-                                <img src="/images/cutecat.jpg" alt="Card Image" class="card-image1">
+                                <h3 class="drink-name">Drink 1</h3>
+                                <img src="/images/NonCaffeinatedCoffee/Golden-Latte.jpg" alt="Card Image" class="card-image">
                                 <div class="image-holder"></div>
                                 <div class="drink-info">
-                                    <h2 class="card-title">Cocoa Caramel</h2>
+                                    <h2 class="card-title">Golden Latte</h2>
                                     <hr class="hr-line" />
                                     <button class="card-button">Discover</button>
                                 </div>
@@ -54,21 +48,43 @@
                         </li>
                         <li class="card-item swiper-slide">
                             <div class="card-link">
-                                <div class="drink-name">
-                                    <h3>Drink 1</h3>
-                                </div>
-                                <img src="/images/cutecat.jpg" alt="Card Image" class="card-image1">
+                                <h3 class="drink-name">Drink 1</h3>
+                                <img src="/images/NonCaffeinatedCoffee/Slow-Caramel-Apple-Cider.jpg" alt="Card Image" class="card-image">
                                 <div class="image-holder"></div>
                                 <div class="drink-info">
-                                    <h2 class="card-title">Cocoa Caramel</h2>
+                                    <h2 class="card-title">Slow Caramel Apple Cider</h2>
+                                    <hr class="hr-line" />
+                                    <button class="card-button">Discover</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <div class="card-link">
+                                <h3 class="drink-name">Drink 1</h3>
+                                <img src="/images/NonCaffeinatedCoffee/Strawberry-Lemonade.jpg" alt="Card Image" class="card-image">
+                                <div class="image-holder"></div>
+                                <div class="drink-info">
+                                    <h2 class="card-title">Strawberry-Lemonade</h2>
+                                    <hr class="hr-line" />
+                                    <button class="card-button">Discover</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <div class="card-link">
+                                <h3 class="drink-name">Drink 1</h3>
+                                <img src="/images/NonCaffeinatedCoffee/Strawberry-Banana-Smoothie.jpg" alt="Card Image" class="card-image">
+                                <div class="image-holder"></div>
+                                <div class="drink-info">
+                                    <h2 class="card-title">Strawberry Banana Smoothie</h2>
                                     <hr class="hr-line" />
                                     <button class="card-button">Discover</button>
                                 </div>
                             </div>
                         </li>
                     </ul>
-
-                    <div class="swiper-pagination-bullet swiper-pagination"></div>
+  
+                    <div class="swiper-pagination"></div>
                     <div class="swiper-slide-button swiper-button-prev"></div>
                     <div class="swiper-slide-button swiper-button-next"></div>
                 </div>
@@ -78,126 +94,128 @@
             <h1>FOOTER</h1>
         </div>
     </div>
-</template>
-
-<script>
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-
-document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.card-wrapper', {
-    loop: true,
-    spaceBetween: 10,
-
-    // Pagination Bullets
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      dynamicBullets: true,
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // Responsive breakpoints
-    breakpoints: {
-      0: {
-          slidesPerView: 1
+  </template>
+  
+  <script setup>
+  import { onMounted, onBeforeUnmount } from "vue";
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+  
+  let swiperInstance;
+  
+  onMounted(() => {
+    swiperInstance = new Swiper('.card-wrapper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'bullets',
+        dynamicBullets: true,
       },
-      768: {
-          slidesPerView: 2
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      1024: {
-          slidesPerView: 3
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
       },
+    });
+  });
+  
+  onBeforeUnmount(() => {
+    if (swiperInstance) {
+      swiperInstance.destroy();
     }
   });
-});
-</script>
-
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
-
-* {
+  </script>
+  
+  <style scoped>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  @import url('https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+  
+  * {
     font-family: "Poppins", sans-serif;
-}
-
-.video-section {
+  }
+  
+  .video-section {
     min-height: 30vh;
-}
-
-.title-section h2{
+  }
+  
+  .title-section h2{
     color:rgb(73, 35, 16);
     margin-left: 250px;
-}
-
-.child-container{
+  }
+  
+  .child-container{
     background-color: #ECE0D1;
-    height: 100%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-}
-
-.swiper {
-  width: 100%;
-  max-width: 1200px;
-  height: auto;
-}
-
-
-.container .card-wrapper {
+    height: 550px;
+  }
+  
+  .swiper {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    padding-top: 50px;
+  }
+  
+  .container .card-wrapper {
     max-width: 1100px;
     margin: 0 60px 35px;
     overflow: hidden;
-}
-
-.card-list .card-item {
+  }
+  
+  .card-list{
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  .card-list .card-item {
     list-style: none;
-}
-
-.card-list .card-item .card-link {
+    height: auto;
+    padding: 0%;
+  }
+  
+  .card-list .card-item .card-link {
     user-select: none;
     display: block;
-    /* background: #fff; */
-    padding: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 12px;
     text-decoration: none;
     border: 2px solid transparent;
-    /* box-shadow: 0 10px rgb(0,0,0,0.05 ); */
     transition: all 0.3s ease;
     position: relative;
-    height: 100%;
-}
-
-.card-list .card-item .card-link:active {
+  }
+  
+  .card-list .card-item .card-link:active {
     cursor: grabbing;
-}
-
-.card-list .card-item .card-link:hover {
+  }
+  
+  .card-list .card-item .card-link:hover {
     /* border-color: #5372F0; */
     border-color: none;
-}
-
-.card-list .card-link .card-image {
+  }
+  
+  .card-list .card-link .card-image {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 10px;
-}
-
-.drink-name {
+  }
+  
+  .drink-name {
     position: absolute;
-    top: 15px;
-    left: 40%;
+    top: 25px;
+    left: 43.5%;
     z-index: 20;
-    margin-bottom: 50px;
-}
-
-.card-list .card-link .card-image1 {
+    /* margin-bottom: 0px; */
+    margin: -5px;
+  
+    background: #DCA56D;
+  }
+  
+  .card-list .card-link .card-image {
     width: 150px;
     height: 180px;
     background: #eee;
@@ -209,95 +227,98 @@ document.addEventListener('DOMContentLoaded', () => {
     border-top-right-radius: 10px;
     aspect-ratio: 16 / 9;
     object-fit: cover;
-}
-
-.image-holder {
+  }
+  
+  .image-holder {
     height: 160px;
     width: 100%;
     background: #3F1A12;
     border-top-left-radius: 70px;
     border-top-right-radius: 70px;
+    border: 2px solid #DCA56D;
     margin-top: 40%;
     margin-bottom: 0%;
-}
-
-.drink-info {
+  }
+  
+  .drink-info {
     position: relative;
-    height: 100%;
+    height: 150px;
+    width: 100%;
     top: -25px;
     background: #fff;
-}
-
-
-.card-list .card-link .card-title {
+    border: 2px solid #DCA56D;
+  }
+  
+  
+  .card-list .card-link .card-title {
     padding-top: 25px;
-    margin-left: 15px;
+    margin-left: 25px;
     font-size: 1.30rem;
     color: #000;
     font-weight: 600;
-}
-
-.drink-info hr {
+  }
+  
+  .drink-info hr {
     width: 260px;
     border: 1px solid #3F1A12;
-}
-
-.card-list .card-link .card-button{
+  }
+  
+  .card-list .card-link .card-button{
     color: #3F1A12;
     padding: 6px 10px;
-    margin-left: 15px;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-bottom: 15px;
     border-radius: 50px 50px;
     font-size: 12px;
     background: none;
     cursor: pointer;
     border: 2px solid #3F1A12;
     transition: 0.4s ease;
-    margin-bottom: 15px;
-}
-
-.card-list .card-link:hover .card-button{
+  }
+  
+  .card-list .card-link:hover .card-button{
     color:#fff;
     background: #3F1A12;
-}
-
-.card-list .card-link:hover .drink-info{
+  }
+  
+  .card-list .card-link:hover .drink-info{
     background: #DCA56D;
-}
-
-
-.card-list .card-link:hover {
+  }
+  
+  
+  .card-list .card-link:hover {
     transform: scale(1.1);
-}
-
-.card-wrapper .swiper-pagination-bullet {
-    height: 15px;
-    width: 20px;
-    opacity: 0.5;
-    background: #ECE0D1; 
-    color: #3F1A12;
-}
-
-.card-wrapper .swiper-pagination-bullet:active {
-    opacity: 1;
-}
-
-.card-wrapper .swiper-slide-button {
+  }
+  
+  ::v-deep(.swiper-pagination-bullet) {
+    width: 13px !important;
+    height: 13px !important;
+    background: #3F1A12 !important;
+  }
+  
+  ::v-deep(.swiper-pagination-bullet-active) {
+    width: 16px !important;
+    height: 16px !important;
+    background: #3F1A12 !important;
+  }
+  
+  .card-wrapper .swiper-slide-button {
     margin-top: -35px;
-}
-
-.swiper-button-next,
-.swiper-button-prev,
-.swiper-pagination {
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev{
     color: #3F1A12;
-}
-
-@media screen and (max-width: 768px) {
+  }
+  
+  @media screen and (max-width: 768px) {
     .card-wrapper {
         margin: 0 10px 25px;
     }
-
+  
     .card-wrapper .swiper-slide-button {
         display: none;
     }
-}
-</style>
+  }
+  </style>

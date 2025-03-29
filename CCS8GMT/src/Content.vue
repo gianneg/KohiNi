@@ -1,13 +1,9 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import Homepage from './components/Homepage.vue'
-import CaffeinatedCoffee from './components/CaffeinatedCoffee.vue';
-import Header from './Header.vue';
-import NavBar from './components/NavBar.vue';
+import { RouterView } from 'vue-router'
 </script>
 
 <template>
-     <RouterView />
+    <RouterView />
 </template>
 
 <style>

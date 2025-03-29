@@ -12,13 +12,11 @@
                   <ul class="card-list swiper-wrapper">
                       <li class="card-item swiper-slide">
                           <div class="card-link">
-                              <div class="drink-name">
-                                  <h3>Drink 1</h3>
-                              </div>
-                              <img src="/images/cutecat.jpg" alt="Card Image" class="card-image">
+                              <h3 class="drink-name">Drink 1</h3>
+                              <img src="/images/CaffeinatedCoffee/Vietnamese_Iced_Coffee.jpg" alt="Card Image" class="card-image">
                               <div class="image-holder"></div>
                               <div class="drink-info">
-                                  <h2 class="card-title">Cocoa Caramel</h2>
+                                  <h2 class="card-title">Vietnamese Iced Coffee</h2>
                                   <hr class="hr-line" />
                                   <button class="card-button">Discover</button>
                               </div>
@@ -26,13 +24,11 @@
                       </li>
                       <li class="card-item swiper-slide">
                           <div class="card-link">
-                              <div class="drink-name">
-                                  <h3>Drink 1</h3>
-                              </div>
-                              <img src="/images/cutecat.jpg" alt="Card Image" class="card-image">
+                              <h3 class="drink-name">Drink 1</h3>
+                              <img src="/images/CaffeinatedCoffee/Spanish-Iced-Latte.jpg" alt="Card Image" class="card-image">
                               <div class="image-holder"></div>
                               <div class="drink-info">
-                                  <h2 class="card-title">Cocoa Caramel</h2>
+                                  <h2 class="card-title">Spanish Iced Latte</h2>
                                   <hr class="hr-line" />
                                   <button class="card-button">Discover</button>
                               </div>
@@ -40,13 +36,11 @@
                       </li>
                       <li class="card-item swiper-slide">
                           <div class="card-link">
-                              <div class="drink-name">
-                                  <h3>Drink 1</h3>
-                              </div>
-                              <img src="/images/cutecat.jpg" alt="Card Image" class="card-image">
+                              <h3 class="drink-name">Drink 1</h3>
+                              <img src="/images/CaffeinatedCoffee/Iced-Caramel-Macchiato.jpg" alt="Card Image" class="card-image">
                               <div class="image-holder"></div>
                               <div class="drink-info">
-                                  <h2 class="card-title">Cocoa Caramel</h2>
+                                  <h2 class="card-title">Iced Caramel Macchiato</h2>
                                   <hr class="hr-line" />
                                   <button class="card-button">Discover</button>
                               </div>
@@ -54,13 +48,35 @@
                       </li>
                       <li class="card-item swiper-slide">
                           <div class="card-link">
-                              <div class="drink-name">
-                                  <h3>Drink 1</h3>
-                              </div>
-                              <img src="/images/cutecat.jpg" alt="Card Image" class="card-image">
+                              <h3 class="drink-name">Drink 1</h3>
+                              <img src="/images/CaffeinatedCoffee/Espresso-Coffee.jpg" alt="Card Image" class="card-image">
                               <div class="image-holder"></div>
                               <div class="drink-info">
-                                  <h2 class="card-title">Cocoa Caramel</h2>
+                                  <h2 class="card-title">Espresso</h2>
+                                  <hr class="hr-line" />
+                                  <button class="card-button">Discover</button>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="card-item swiper-slide">
+                          <div class="card-link">
+                              <h3 class="drink-name">Drink 1</h3>
+                              <img src="/images/CaffeinatedCoffee/Caramel-Frappuccino.jpg" alt="Card Image" class="card-image">
+                              <div class="image-holder"></div>
+                              <div class="drink-info">
+                                  <h2 class="card-title">Caramel Frappuccino</h2>
+                                  <hr class="hr-line" />
+                                  <button class="card-button">Discover</button>
+                              </div>
+                          </div>
+                      </li>
+                      <li class="card-item swiper-slide">
+                          <div class="card-link">
+                              <h3 class="drink-name">Drink 1</h3>
+                              <img src="/images/CaffeinatedCoffee/Mocha-Latte.jpg" alt="Card Image" class="card-image">
+                              <div class="image-holder"></div>
+                              <div class="drink-info">
+                                  <h2 class="card-title">Mocha Latte</h2>
                                   <hr class="hr-line" />
                                   <button class="card-button">Discover</button>
                               </div>
@@ -80,50 +96,37 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted, onBeforeUnmount } from "vue";
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
-document.addEventListener('DOMContentLoaded', () => {
-  new Swiper('.card-wrapper', {
-    loop: true,
+let swiperInstance;
 
-    // Pagination Bullets
+onMounted(() => {
+  swiperInstance = new Swiper('.card-wrapper', {
+    loop: true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-      type: 'bullets', // Ensure bullets are used
+      type: 'bullets',
       dynamicBullets: true,
     },
-
-    // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
-    // Responsive breakpoints
     breakpoints: {
-      0: {
-          slidesPerView: 1
-      },
-      768: {
-          slidesPerView: 2
-      },
-      1024: {
-          slidesPerView: 3
-      },
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
     },
-    // breakpoints: {
-    //   768: {
-    //     slidesPerView: 2,
-    //     spaceBetween: 20,
-    //   },
-    //   1024: {
-    //     slidesPerView: 3,
-    //     spaceBetween: 30,
-    //   },
-    // },
   });
+});
+
+onBeforeUnmount(() => {
+  if (swiperInstance) {
+    swiperInstance.destroy();
+  }
 });
 </script>
 
@@ -146,16 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 .child-container{
   background-color: #ECE0D1;
-  height: 100%;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  height: 550px;
 }
 
 .swiper {
-width: 100%;
-max-width: 1200px;
-height: auto;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  padding-top: 50px;
 }
 
 .container .card-wrapper {
@@ -205,10 +206,13 @@ height: auto;
 
 .drink-name {
   position: absolute;
-  top: 15px;
-  left: 40%;
+  top: 25px;
+  left: 43.5%;
   z-index: 20;
-  margin-bottom: 50px;
+  /* margin-bottom: 0px; */
+  margin: -5px;
+
+  background: #DCA56D;
 }
 
 .card-list .card-link .card-image {
@@ -231,6 +235,7 @@ height: auto;
   background: #3F1A12;
   border-top-left-radius: 70px;
   border-top-right-radius: 70px;
+  border: 2px solid #DCA56D;
   margin-top: 40%;
   margin-bottom: 0%;
 }
@@ -238,8 +243,10 @@ height: auto;
 .drink-info {
   position: relative;
   height: 150px;
+  width: 100%;
   top: -25px;
   background: #fff;
+  border: 2px solid #DCA56D;
 }
 
 
