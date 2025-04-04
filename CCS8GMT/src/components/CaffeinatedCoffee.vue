@@ -1,3 +1,37 @@
+<script setup>
+import { onMounted, onBeforeUnmount } from "vue";
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
+let swiperInstance;
+
+onMounted(() => {
+  swiperInstance = new Swiper('.card-wrapper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+});
+
+onBeforeUnmount(() => {
+  if (swiperInstance) {
+    swiperInstance.destroy();
+  }
+});
+</script>
+
 <template>
   <div class="parent-container">
       <div class="title-section">
@@ -90,45 +124,8 @@
               </div>
           </div>
       </div>
-      <div class="footer" style="color: black; text-align: center;">
-          <h1>FOOTER</h1>
-      </div>
   </div>
 </template>
-
-<script setup>
-import { onMounted, onBeforeUnmount } from "vue";
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
-
-let swiperInstance;
-
-onMounted(() => {
-  swiperInstance = new Swiper('.card-wrapper', {
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-      type: 'bullets',
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    },
-  });
-});
-
-onBeforeUnmount(() => {
-  if (swiperInstance) {
-    swiperInstance.destroy();
-  }
-});
-</script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
