@@ -15,8 +15,8 @@
         <div class="dropdown" @click.stop="toggleDropdown('recipes')">
           <button class="nav-item">RECIPES</button>
           <div v-if="openDropdown === 'recipes'" class="dropdown-menu">
-            <span @click="navigateTo('/recipes/caffeine')">Caffeine</span>
-            <span @click="navigateTo('/recipes/non-caffeine')">Non-Caffeine</span>
+            <span @click="navigateTo('/CaffeinatedCoffee')">Caffeine</span>
+            <span @click="navigateTo('/NonCaffeinatedCoffee')">Non-Caffeine</span>
           </div>
         </div>
       </div>
