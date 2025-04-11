@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContentView from '../views/ContentView.vue';
-import CaffeinatedCoffee from '@/components/Coffees/CaffeinatedCoffee.vue';
-import NonCaffeinatedCoffee from '@/components/Coffees/NonCaffeinatedCoffee.vue';
+import CaffeinatedCoffee from '../components/recipes/CaffeinatedCoffee.vue';
+import NonCaffeinatedCoffee from '../components/recipes/NonCaffeinatedCoffee.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
