@@ -190,6 +190,15 @@ body {
 
 .text-reset {
   color: inherit !important;
+  cursor: pointer;
+}
+
+.recipe-caffein {
+  margin: 5px;
+}
+
+.recipe-non-caffein {
+  margin: 5px;
 }
 
 .fw-bold {
@@ -299,4 +308,16 @@ body {
   height: 24px;
   vertical-align: middle;
   margin-right: 8px;
+}
+
+.contact-email{
+  margin: 5px;
+}
+
+.contact-cellphone{
+  margin: 5px;
+}
+
+.contact-telephone{
+  margin: 5px;
 }
