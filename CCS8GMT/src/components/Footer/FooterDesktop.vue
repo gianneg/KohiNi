@@ -1,18 +1,3 @@
-<!-- <script>
-import { MDBFooter, MDBIcon, MDBRow, MDBCol, MDBContainer } from "mdb-vue-ui-kit";
-import 'mdb-vue-ui-kit/css/mdb.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
-export default {
-    components: {
-      MDBFooter,
-      MDBIcon,
-      MDBRow,
-      MDBCol,
-      MDBContainer
-    }
-}
-</script> -->
 
 <template>
         <div class="main-footer-container">
@@ -57,7 +42,7 @@ export default {
                     <div class="row mt-1">
                         <div class="col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <h6 class="footer-heading">
-                                <span class="icon-gem"><img src="/img/Logo/favicon-32x32.png"></span>COMPANY NAME
+                                <a href="/"><img src="/img/Logo/favicon-32x32.png"></a>COMPANY NAME
                             </h6>
                             <p class="footer-description">
                                 Here you can use rows and columns to organize your footer content.
@@ -65,11 +50,9 @@ export default {
                         </div>
 
                         <div class="col col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 class="footer-heading">PRODUCTS</h6>
-                            <p><a href="#!" class="text-reset">Angular</a></p>
-                            <p><a href="#!" class="text-reset">React</a></p>
-                            <p><a href="#!" class="text-reset">Vue</a></p>
-                            <p><a href="#!" class="text-reset">Laravel</a></p>
+                            <h6 class="footer-heading">RECIPES</h6>
+                            <p class="recipe-caffein"><a href="/CaffeinatedCoffee" class="text-reset">Caffeinated Coffee</a></p>
+                            <p class="recipe-non-caffein"><a href="/NonCaffeinatedCoffee" class="text-reset">Non-Caffeinated Coffee</a></p>
                         </div>
 
                         <div class="col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -82,10 +65,9 @@ export default {
 
                         <div class="col col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                             <h6 class="footer-heading">CONTACT</h6>
-                            <p><span class="icon-home"></span> New York, NY 10012, US</p>
-                            <p><span class="icon-email"></span> info@example.com</p>
-                            <p><span class="icon-phone"></span> +01 234 567 88</p>
-                            <p><span class="icon-print"></span> +01 234 567 89</p>
+                            <p class="contact-email"><span class="icon-email"></span> info@example.com</p>
+                            <p class="contact-cellphone"><span class="icon-phone"></span> +01 234 567 88</p>
+                            <p class="contact-telephone"><span class="icon-print"></span> +01 234 567 89</p>
                         </div>
                     </div>
                 </div>
@@ -95,13 +77,25 @@ export default {
             <!-- Copyright -->
             <div class="footer-copyright">
                 © 2025 Copyright:
-                <a class="text-reset fw-bold" href="#">WEBNAME</a>
+                <a class="text-reset fw-bold" href="/">KohiNi</a>
             </div>
             <!-- Copyright -->
         </footer>
         <!-- Footer -->
     </div>
   </template>
+
+<script>
+export default {
+  methods: {
+    navigateTo(route) {
+      this.$router.push(route);
+      this.openDropdown = null; // Close dropdown after navigation
+    },
+  },
+};
+</script>
+
 
 <style scoped>
 @import 'Footer.css';
