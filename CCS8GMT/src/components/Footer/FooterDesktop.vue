@@ -13,23 +13,20 @@
 
                 <!-- Right -->
                 <div class="social-icons">
-                    <a href="" class="icon-link">
+                    <a href="#" class="icon-link" aria-label="Facebook">
                         <span class="fa fa-facebook-f"></span>
                     </a>
-                    <a href="" class="icon-link">
+                    <a href="#" class="icon-link" aria-label="Twitter">
                         <span class="fa fa-twitter"></span>
                     </a>
-                    <a href="" class="icon-link">
-                        <span class="fa fa-google"></span>
-                    </a>
-                    <a href="" class="icon-link">
+                    <a href="#" class="icon-link" aria-label="Instagram">
                         <span class="fa fa-instagram"></span>
                     </a>
-                    <a href="" class="icon-link">
-                        <span class="fa fa-linkedin"></span>
+                    <a href="#" class="icon-link" aria-label="Discord">
+                        <span class="fab fa-discord"></span>
                     </a>
-                    <a href="" class="icon-link">
-                        <span class="fa fa-github"></span>
+                    <a href="#" class="icon-link" aria-label="GitHub">
+                        <span class="fab fa-github"></span>
                     </a>
                 </div>
                 <!-- Right -->
