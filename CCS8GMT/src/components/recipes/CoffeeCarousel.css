@@ -9,6 +9,16 @@
   margin-left: 250px;
 }
 
+.title-section .caffeine-tagline{
+  color:rgb(73, 35, 16);
+  margin-left: 250px;
+}
+
+.title-section .non-caffeine-tagline{
+  color:rgb(73, 35, 16);
+  margin-left: 250px;
+}
+
 .child-container{
   background-color: #ECE0D1;
   height: 550px;
