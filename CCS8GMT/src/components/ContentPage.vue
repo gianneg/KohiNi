@@ -24,18 +24,6 @@
                 </ul>
             </div>
 
-            <!-- Equipment Used -->
-            <div class="section">
-                <button @click="toggleSection('equipment')">
-                    ▷ Equipment Used
-                </button>
-                <ul v-if="sections.equipment">
-                    <li v-for="(item, index) in drinkData.equipment_used" :key="index">
-                        {{ item }}
-                    </li>
-                </ul>
-            </div>
-
             <!-- Instructions -->
             <div class="section">
                 <button @click="toggleSection('instructions')">

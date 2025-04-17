@@ -29,8 +29,8 @@ const router = createRouter({
       component: CaffeinatedCoffee
     },
     {
-      path: '/NonCaffeinatedCoffee',
-      name: 'NonCaffeinatedCoffee',
+      path: '/NonCaffeinatedDrinks',
+      name: 'NonCaffeinatedDrinks',
       component: NonCaffeinatedCoffee
     }
   ],
