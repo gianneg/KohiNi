@@ -1,44 +1,35 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useRouter } from "vue-router";
+import { db } from "@/lib/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
-let swiperInstance;
+const router = useRouter();
 
-// Non-Caffein Drinks Data
-const nonCaffeinDrinks = ref([
-  {
-    id: 1,
-    title: "Caramel Hot Chocolate",
-    image: "/img/NonCaffeinatedCoffee/Caramel-Hot-Chocolate.jpg",
-  },
-  {
-    id: 2,
-    title: "Cinnamon Tea Latte",
-    image: "/img/NonCaffeinatedCoffee/Cinnamon-Tea-Latte.jpg",
-  },
-  {
-    id: 3,
-    title: "Golden Latte",
-    image: "/img/NonCaffeinatedCoffee/Golden-Latte.jpg",
-  },
-  {
-    id: 4,
-    title: "Slow Caramel Apple Cider",
-    image: "/img/NonCaffeinatedCoffee/Slow-Caramel-Apple-Cider.jpg",
-  },
-  {
-    id: 5,
-    title: "Strawberry-Lemonade",
-    image: "/img/NonCaffeinatedCoffee/Strawberry-Lemonade.jpg",
-  },
-  {
-    id: 6,
-    title: "Strawberry Banana Smoothie",
-    image: "/img/NonCaffeinatedCoffee/Strawberry-Banana-Smoothie.jpg",
+let swiperInstance = null;
+
+const nonCaffeineDrinks = ref([]);
+
+const fetchNonCaffeinatedDrinks = async () => {
+  try {
+    const drinksRef = collection(db, "Drinks");
+    const q = query(drinksRef, where("type", "==", "non-caffeinated"));
+    const querySnapshot = await getDocs(q);
+
+    nonCaffeineDrinks.value = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      title: doc.data().drink_name,
+      image: doc.data().image_url,
+    }));
+  } catch (error) {
+    console.error("Error fetching non-caffeinated drinks:", error);
   }
-]);
+};
 
-onMounted(() => {
+onMounted(async () => {
+  await fetchNonCaffeinatedDrinks();
+
   swiperInstance = new Swiper('.card-wrapper', {
     loop: true,
     pagination: {
@@ -71,7 +62,7 @@ onBeforeUnmount(() => {
     <div class="title-section">
       <h2>NON-CAFFEINATED DRINKS</h2>
       <p class="non-caffeine-tagline">
-        “Sip the calm — Discover rich, flavorful non-caffeinated coffee alternatives.”
+        “Sip the calm — Discover rich, flavorful non-caffeinated drink alternatives.”
       </p>
     </div>
     <div class="video-section">
@@ -82,7 +73,7 @@ onBeforeUnmount(() => {
         <div class="card-wrapper">
           <ul class="card-list swiper-wrapper">
             <li
-              v-for="drink in nonCaffeinDrinks"
+              v-for="drink in nonCaffeineDrinks"
               :key="drink.id"
               class="card-item swiper-slide"
             >
