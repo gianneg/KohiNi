@@ -13,6 +13,7 @@ import NavBar from './components/NavBar/NavBar.vue'
 header {
     margin-top: 0px;
     width: 1280px;
+    justify-self: center;
     line-height: 1.5;
     max-height: 100vh;
 }

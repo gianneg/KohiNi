@@ -21,4 +21,9 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
+
+.container {
+  max-width: 1280px;
+  justify-self: center;
+}
 </style>
