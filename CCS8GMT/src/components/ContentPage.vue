@@ -55,62 +55,70 @@
 
 <script>
 import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
 import { db } from "../lib/firebase";
 import { doc, getDoc, collection, getDocs, query, where, limit } from "firebase/firestore";
 import DrinkCarousel from "./DrinkCarousel/DrinkCarousel.vue";
 
 export default {
-    components: { DrinkCarousel },
-    data() {
-        return {
-            drinkData: null,
-            similarDrinks: [],
-            sections: {
-                ingredients: false,
-                equipment: false,
-                instructions: false,
-            },
-        };
-    },
-    methods: {
-        async fetchDrinkData() {
-            try {
-                const docRef = doc(db, "drinks", this.$route.params.id);
-                const docSnap = await getDoc(docRef);
+  components: { DrinkCarousel },
+  setup() {
+    const route = useRoute();
+    const drinkId = route.params.id;
 
-                if (docSnap.exists()) {
-                    this.drinkData = docSnap.data();
-                } else {
-                    console.error("No such drink found.");
-                }
-            } catch (error) {
-                console.error("Error fetching drink data:", error);
-            }
-        },
-        async fetchSimilarDrinks() {
-            try {
-                const q = query(
-                    collection(db, "drinks"),
-                    where("id", "!=", this.$route.params.id), // assumes you store `id` field explicitly
-                    limit(6)
-                );
+    const drinkData = ref(null);
+    const similarDrinks = ref([]);
+    const sections = ref({
+      ingredients: false,
+      instructions: false,
+    });
 
-                const querySnapshot = await getDocs(q);
-                this.similarDrinks = querySnapshot.docs.map(doc => ({
-                    id: doc.id,
-                    ...doc.data()
-                }));
-            } catch (error) {
-                console.error("Error fetching similar drinks:", error);
-            }
-        },
-        toggleSection(section) {
-            this.sections[section] = !this.sections[section];
-        },
-    },
-    async mounted() {
-        await this.fetchDrinkData();
-        await this.fetchSimilarDrinks();
-    },
+    const fetchDrinkData = async () => {
+      try {
+        const docRef = doc(db, "Drinks", drinkId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          drinkData.value = docSnap.data();
+        } else {
+          console.error("Drink not found.");
+        }
+      } catch (err) {
+        console.error("Error loading drink:", err);
+      }
+    };
+
+    const fetchSimilarDrinks = async () => {
+      try {
+        const q = query(collection(db, "drinks"), limit(6));
+        const snapshot = await getDocs(q);
+
+        similarDrinks.value = snapshot.docs
+          .filter(doc => doc.id !== drinkId)
+          .map(doc => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+      } catch (err) {
+        console.error("Error loading similar drinks:", err);
+      }
+    };
+
+    const toggleSection = (section) => {
+      sections.value[section] = !sections.value[section];
+    };
+
+    onMounted(async () => {
+      await fetchDrinkData();
+      await fetchSimilarDrinks();
+    });
+
+    return {
+      drinkData,
+      similarDrinks,
+      sections,
+      toggleSection,
+    };
+  },
 };
 </script>
