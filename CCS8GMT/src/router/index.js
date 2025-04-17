@@ -19,8 +19,8 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path: '/content',
-      name: 'content',
+      path: '/content/:id',
+      name: 'Content',
       component: ContentView,
     },
     {

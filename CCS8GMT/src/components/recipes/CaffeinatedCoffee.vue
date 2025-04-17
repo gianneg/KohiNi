@@ -1,44 +1,36 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useRouter } from "vue-router";
+import { db } from "@/lib/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
-let swiperInstance;
+const router = useRouter();
 
-//Caffein Drinks Data
-const caffeinDrinks = ref([
-    {
-        id: 1,   
-        title: "Vietnamese Iced Coffee",
-        image:"/img/CaffeinatedCoffee/Vietnamese_Iced_Coffee.jpg",
-    },
-    {
-        id: 2,   
-        title: "Spanish Iced Latte",
-        image:"/img/CaffeinatedCoffee/Spanish-Iced-Latte.jpg",
-    },
-    {
-        id: 3,   
-        title: "Ice Caramel Macchiato",
-        image:"/img/CaffeinatedCoffee/Ice-Caramel-Macchiato.jpg",
-    },
-    {
-        id: 4,   
-        title: "Espresso",
-        image:"/img/CaffeinatedCoffee/Espresso-Coffee.jpg",
-    },
-    {
-        id: 5,   
-        title: "Caramel Frappuccino",
-        image:"/img/CaffeinatedCoffee/Caramel-Frappuccino.jpg",
-    },
-    {
-        id: 6,   
-        title: "Mocha Latte",
-        image:"/img/CaffeinatedCoffee/Mocha-Latte.jpg",
-    },
-]);
+let swiperInstance = null;
 
-onMounted(() => {
+//Caffeine Drinks Data
+const caffeineDrinks = ref([]);
+
+const fetchCaffeinatedDrinks = async () => {
+  try {
+    const drinksRef = collection(db, "Drinks");
+    const q = query(drinksRef, where("type", "==", "caffeinated"));
+    const querySnapshot = await getDocs(q);
+
+    caffeineDrinks.value = querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      title: doc.data().drink_name,
+      image: doc.data().image_url,
+    }));
+  } catch (error) {
+    console.error("Error fetching caffeinated drinks:", error);
+  }
+};
+
+onMounted(async () => {
+  await fetchCaffeinatedDrinks();
+
   swiperInstance = new Swiper('.card-wrapper', {
     loop: true,
     pagination: {
@@ -80,7 +72,7 @@ onBeforeUnmount(() => {
             <div class="card-wrapper">
             <ul class="card-list swiper-wrapper">
                 <li
-                v-for="drink in caffeinDrinks"
+                v-for="drink in caffeineDrinks"
                 :key="drink.id"
                 class="card-item swiper-slide"
                 >
@@ -91,7 +83,7 @@ onBeforeUnmount(() => {
                     <div class="drink-info">
                     <h2 class="card-title">{{ drink.title }}</h2>
                     <hr class="hr-line" />
-                    <button class="card-button">Discover</button>
+                    <button class="card-button" @click="$router.push(`/content/${drink.id}`)">Discover</button>
                     </div>
                 </div>
                 </li>
