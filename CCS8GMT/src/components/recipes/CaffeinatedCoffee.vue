@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="parent-container">
       <div class="title-section">
-          <h2>CAFFEIN</h2>
+          <h2>CAFFEINATED DRINKS</h2>
           <p class="caffeine-tagline">“Brew it your way — Explore delicious coffee recipes from around the world.”</p>
       </div>
       <div class="video-section">

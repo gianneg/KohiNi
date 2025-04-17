@@ -69,7 +69,7 @@ onBeforeUnmount(() => {
 <template>
   <div class="parent-container">
     <div class="title-section">
-      <h2>NON-CAFFEIN</h2>
+      <h2>NON-CAFFEINATED DRINKS</h2>
       <p class="non-caffeine-tagline">
         “Sip the calm — Discover rich, flavorful non-caffeinated coffee alternatives.”
       </p>

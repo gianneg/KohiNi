@@ -22,7 +22,7 @@
       </div>
   
       <!-- Logo -->
-      <div class="logo">Placeholder</div>
+      <div class="logo"><span class="logo-name" @click="navigateTo('/')">Placeholder</span></div>
   
       <!-- Search Bar -->
       <div class="search-bar">

@@ -66,8 +66,9 @@
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
-import { supabase } from "../lib/supabase";
+import { onMounted, ref } from "vue";
+import { db } from "../lib/firebase";
+import { doc, getDoc, collection, getDocs, query, where, limit } from "firebase/firestore";
 import DrinkCarousel from "./DrinkCarousel/DrinkCarousel.vue";
 
 export default {
@@ -85,30 +86,34 @@ export default {
     },
     methods: {
         async fetchDrinkData() {
-            const { data, error } = await supabase
-                .from("drinks")
-                .select("*")
-                .eq("id", this.$route.params.id)
-                .single(); 
+            try {
+                const docRef = doc(db, "drinks", this.$route.params.id);
+                const docSnap = await getDoc(docRef);
 
-            if (error) {
+                if (docSnap.exists()) {
+                    this.drinkData = docSnap.data();
+                } else {
+                    console.error("No such drink found.");
+                }
+            } catch (error) {
                 console.error("Error fetching drink data:", error);
-            } else {
-                this.drinkData = data;
             }
         },
-        // Fetch similar drinks to display in the carousel
         async fetchSimilarDrinks() {
-            const { data, error } = await supabase
-                .from("drinks")
-                .select("id, drink_name, image_url")
-                .neq("id", this.$route.params.id)
-                .limit(6);
+            try {
+                const q = query(
+                    collection(db, "drinks"),
+                    where("id", "!=", this.$route.params.id), // assumes you store `id` field explicitly
+                    limit(6)
+                );
 
-            if (error) {
+                const querySnapshot = await getDocs(q);
+                this.similarDrinks = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+            } catch (error) {
                 console.error("Error fetching similar drinks:", error);
-            } else {
-                this.similarDrinks = data;
             }
         },
         toggleSection(section) {
@@ -121,70 +126,3 @@ export default {
     },
 };
 </script>
-
-<style scoped>
-/* Drink Details */
-.drink-details {
-    background: #f9f5f0;
-    padding: 30px;
-}
-
-.content-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #7b4b2a;
-}
-
-.drink-info {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.drink-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-}
-
-.drink-name {
-    font-size: 30px;
-    color: #492310;
-}
-
-/* Sections */
-.section {
-    margin-bottom: 10px;
-}
-
-.section button {
-    font-size: 18px;
-    background: none;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Fun Fact */
-.fun-fact {
-    background: #7b4b2a;
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    max-width: 300px;
-    margin-top: 20px;
-}
-
-/* Similar Drinks */
-.similar-title {
-    text-align: center;
-    font-size: 20px;
-    margin-top: 30px;
-}
-</style>
