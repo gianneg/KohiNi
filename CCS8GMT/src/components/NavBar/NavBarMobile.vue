@@ -1,4 +1,5 @@
 <template>
+  <div class="container">
     <nav class="navbar">
       <div class="mobile-left">
         <div class="hamburger" @click="toggleMenu">☰</div>
@@ -22,6 +23,7 @@
         </div>
       </div>
     </nav>
+  </div>
   </template>
   
   
