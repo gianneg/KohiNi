@@ -4,6 +4,7 @@ import AboutView from '../views/AboutView.vue';
 import ContentView from '../views/ContentView.vue';
 import CaffeinatedCoffee from '@/components/Coffees/CaffeinatedCoffee.vue';
 import NonCaffeinatedCoffee from '@/components/Coffees/NonCaffeinatedCoffee.vue';
+import FrequentlyAskedQuestions from '@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/NonCaffeinatedCoffee',
       name: 'NonCaffeinatedCoffee',
       component: NonCaffeinatedCoffee
+    },
+    {
+      path: '/FrequentlyAskedQuestions',
+      name: 'FrequentlyAskedQuestions',
+      component: FrequentlyAskedQuestions
     }
   ],
 })
