@@ -49,8 +49,8 @@
                     { title: "Title 3", caption: "Caption 3" },
                 ],
                 drinkCategories: [
-                    { title: "Caffeine-based Drinks", route: "/caffeine-drinks", image: "/img/caramelmacchiato.jpg" },
-                    { title: "Non-caffeinated Drinks", route: "/non-caffeine-drinks", image: "/img/icedchocolatemilk.jpg" },
+                    { title: "Caffeine-based Drinks", route: "/caffeinatedcoffee", image: "/img/caramelmacchiato.jpg" },
+                    { title: "Non-caffeinated Drinks", route: "/noncaffeinateddrinks", image: "/img/icedchocolatemilk.jpg" },
                 ],
             };
         },
