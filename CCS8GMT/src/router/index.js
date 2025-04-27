@@ -2,9 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContentView from '../views/ContentView.vue';
+<<<<<<< HEAD
 import CaffeinatedCoffee from '@/components/Coffees/CaffeinatedCoffee.vue';
 import NonCaffeinatedCoffee from '@/components/Coffees/NonCaffeinatedCoffee.vue';
 import FrequentlyAskedQuestions from '@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.vue'
+=======
+import CaffeinatedCoffee from '../components/recipes/CaffeinatedCoffee.vue';
+import NonCaffeinatedCoffee from '../components/recipes/NonCaffeinatedCoffee.vue';
+>>>>>>> 9fbbc6ed7059345909acbfaecef35b6f9992b24d
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,8 +25,8 @@ const router = createRouter({
       component: AboutView,
     },
     {
-      path: '/content',
-      name: 'content',
+      path: '/content/:id',
+      name: 'Content',
       component: ContentView,
     },
     {
@@ -30,8 +35,8 @@ const router = createRouter({
       component: CaffeinatedCoffee
     },
     {
-      path: '/NonCaffeinatedCoffee',
-      name: 'NonCaffeinatedCoffee',
+      path: '/NonCaffeinatedDrinks',
+      name: 'NonCaffeinatedDrinks',
       component: NonCaffeinatedCoffee
     },
     {

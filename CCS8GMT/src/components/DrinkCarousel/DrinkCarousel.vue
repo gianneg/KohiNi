@@ -2,25 +2,22 @@
   <div class="carousel-container">
     <h2 class="carousel-title"><i>Pick any drink of your choice!</i></h2>
     <div class="carousel-wrapper">
-      <button
-        class="carousel-btn left"
-        @mouseenter="startScrolling(-1)"
-        @mouseleave="stopScrolling"
-      >
+      <button class="carousel-btn left" @click="scroll(-1)">
         &#9664;
       </button>
 
       <div class="carousel" ref="carousel">
-        <a v-for="drink in drinks" :key="drink.id" :href="drink.link" class="carousel-item">
-          <img :src="drink.image" alt="Drink" />
+        <a
+          v-for="drink in drinks"
+          :key="drink.id"
+          @click.prevent="goToDrink(drink.id)"
+          class="carousel-item"
+        >
+          <img :src="drink.image_url" alt="Drink" />
         </a>
       </div>
 
-      <button
-        class="carousel-btn right"
-        @mouseenter="startScrolling(1)"
-        @mouseleave="stopScrolling"
-      >
+      <button class="carousel-btn right" @click="scroll(1)">
         &#9654;
       </button>
     </div>
@@ -28,40 +25,45 @@
 </template>
 
 <script>
+import { db } from "@/lib/firebase";
+import { collection, getDocs } from "firebase/firestore";
+
 export default {
   data() {
     return {
-      drinks: [
-        { id: 1, route: "/#", image: "https://via.placeholder.com/100" },
-        { id: 2, route: "/#", image: "https://via.placeholder.com/100" },
-        { id: 3, route: "/#", image: "https://via.placeholder.com/100" },
-        { id: 4, route: "/#", image: "https://via.placeholder.com/100" },
-        { id: 5, route: "/#", image: "https://via.placeholder.com/100" },
-        { id: 6, route: "/#", image: "https://via.placeholder.com/100" },
-      ],
-      scrollInterval: null,
+      drinks: [],
     };
   },
   methods: {
-    startScrolling(direction) {
-      this.scrollInterval = setInterval(() => {
-        if (this.$refs.carousel) {
-          this.$refs.carousel.scrollLeft += direction * 10;
-        }
-      }, 50);
+    async fetchDrinks() {
+      try {
+        const snapshot = await getDocs(collection(db, "Drinks"));
+        this.drinks = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+      } catch (error) {
+        console.error("Error fetching drinks:", error);
+      }
     },
-    stopScrolling() {
-      clearInterval(this.scrollInterval);
+    scroll(direction) {
+      const carousel = this.$refs.carousel;
+      const card = carousel.querySelector(".carousel-item");
+      const cardWidth = card ? card.offsetWidth : 150;
+      carousel.scrollLeft += direction * cardWidth;
     },
-    navigateTo(route) {
-      this.$router.push(route);
+    goToDrink(drinkId) {
+      this.$router.push(`/content/${drinkId}`);
     },
+  },
+  mounted() {
+    this.fetchDrinks();
   },
 };
 </script>
 
 <style scoped>
-@import './DrinkCarouselBase.css'; /*Desktop*/
-@import './DrinkCarouselLargeMobile.css'; /*768px*/
-@import './DrinkCarouselSmallMobile.css'; /*480px*/
+@import './DrinkCarouselBase.css';
+@import './DrinkCarouselLargeMobile.css';
+@import './DrinkCarouselSmallMobile.css';
 </style>
