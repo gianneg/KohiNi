@@ -2,14 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContentView from '../views/ContentView.vue';
-<<<<<<< HEAD
-import CaffeinatedCoffee from '@/components/Coffees/CaffeinatedCoffee.vue';
-import NonCaffeinatedCoffee from '@/components/Coffees/NonCaffeinatedCoffee.vue';
-import FrequentlyAskedQuestions from '@/components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.vue'
-=======
 import CaffeinatedCoffee from '../components/recipes/CaffeinatedCoffee.vue';
 import NonCaffeinatedCoffee from '../components/recipes/NonCaffeinatedCoffee.vue';
->>>>>>> 9fbbc6ed7059345909acbfaecef35b6f9992b24d
+import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.vue';
+import SiteMap from '../components/SiteMap/SiteMap.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,9 +36,14 @@ const router = createRouter({
       component: NonCaffeinatedCoffee
     },
     {
-      path: '/FrequentlyAskedQuestions',
+      path: '/FAQ',
       name: 'FrequentlyAskedQuestions',
       component: FrequentlyAskedQuestions
+    },
+    {
+      path:'/Site-Map',
+      name:'SiteMap',
+      component: SiteMap
     }
   ],
 })

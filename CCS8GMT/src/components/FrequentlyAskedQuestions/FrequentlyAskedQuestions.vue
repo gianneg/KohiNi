@@ -3,23 +3,14 @@
         FREQUENTLY ASKED QUESTIONS.
     </div>
     <div class="FAQBase">
-        <H3 id="FAQTitle">Most Popular Questions</H3>
+        <h3 id="FAQTitle">Most Popular Questions</h3>
         <div class="FAQContainer">  
-            <div class="FAQQuestion">
-                <p>TEST QUESTION<button class="FAQbtn" @click="ToggleDisplay()">&#9660;</button></p>
-                <div class="FAQAnswer"  v-show="display">
-                    <p>TEST ANSWER</p>
+            <div class="FAQQuestion" v-for="faq in FAQs":key="faq.id" :class="{'active': faq.showans }">
+                <p>{{ faq.Question }}<button class="FAQbtn" @click="ToggleDisplay(faq.id)" :class="{'BAct': faq.showans }">{{ faq.showans ? '&#9650;' : '&#9660;' }}</button></p>
+                <div class="FAQAnswer" v-show="faq.showans">
+                    <p>{{ faq.Answer }}</p>
                 </div>
             </div>
-
-            <div class="FAQQuestion">
-                <p>TEST QUESTION<button class="FAQbtn" @click="ToggleDisplay()">&#9660;</button></p>
-                <div class="FAQAnswer" v-show="display">
-                    <p>TEST ANSWER</p>
-                </div>
-            </div>
-
-            
         </div>
     </div>
     <DrinkCarousel />
@@ -27,6 +18,8 @@
 
 <script>
     import DrinkCarousel from "../DrinkCarousel/DrinkCarousel.vue";
+    import { db } from "@/lib/firebase";
+    import { collection, getDocs } from "firebase/firestore";
 
     
     export default {
@@ -34,16 +27,36 @@
         ,
        data(){
         return{
-            display:true
+            FAQs: [],
         }
        },
 
         methods: {
-            ToggleDisplay(){
-                this.display=!this.display;
+            async fetchfaq() {
+            try {
+            const snapshot = await getDocs(collection(db, "FAQ"));
+            this.FAQs = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data(),
+                showAnswer: false,
+                }));
+            } catch (error) {
+            console.error("Error fetching data:", error);
             }
+            },
+
+            ToggleDisplay(id){
+                const faq = this.FAQs.find(faq => faq.id === id);
+                if (faq) {
+                    faq.showans = !faq.showans;
+                } 
+            }
+
         },
-    };
+        mounted(){
+            this.fetchfaq();
+        }
+         };
 </script>
 
 
