@@ -27,15 +27,30 @@
     max-width: 80%;
     margin: auto;
     gap: 10%;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
 }
 
 .FAQQuestion{
     flex-basis: 40%;
     margin-bottom: 2%;
+    position: relative;
     background-color: #ECE0D1;
     border-radius:25px;
     text-align:left;
-    padding-left: 2%;
+    text-indent: 3%;
+}
+
+.FAQAnswer{
+    background-color: #ECE0D1;
+    color: black;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    text-indent: 0%;
+    padding-left: 5%;
+    padding-bottom: .5%;
+    padding-top:.5% ;
+    padding-right: 5%;
 }
 
 .FAQbtn {
@@ -46,4 +61,12 @@
     color: white;
     margin-left: 3%;
   }
-  
+  .active{
+    background-color: #556B2F;
+    color: #fff;
+  }
+
+  .BAct{
+    background-color: #fff;
+    color: #556B2F;
+  }
