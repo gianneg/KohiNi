@@ -63,12 +63,14 @@
 .cards {
     display: flex;
     justify-self: center;
-    gap: 50px;
+    gap: 100px;
 }
 
 .card {
     background-color: #FFF8F0;
     color: #492310;
+    width: 200px;
+    height: 170px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }

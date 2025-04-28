@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <NavBarDesktop v-if="!isMobile" />
     <NavBarMobile v-else />
   </div>
@@ -32,10 +32,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.container {
-  max-width: 1280px;
-  width: 1280px;
-}
-</style>
