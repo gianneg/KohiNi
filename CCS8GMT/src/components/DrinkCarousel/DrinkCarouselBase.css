@@ -47,11 +47,13 @@
   border: 2px solid #ccc;
   background-color: white;
   text-decoration: none;
+  border-radius: 20px;
 }
 
 .carousel-item img {
   width: 100%;
   height: auto;
+  border-radius: 20px;
 }
 
 .carousel-btn {
