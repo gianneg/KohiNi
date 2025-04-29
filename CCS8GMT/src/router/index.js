@@ -3,7 +3,7 @@ import HomeView from '../views/HomeView.vue';
 import AboutView from '../views/AboutView.vue';
 import ContentView from '../views/ContentView.vue';
 import CaffeinatedCoffee from '../components/recipes/CaffeinatedCoffee.vue';
-import NonCaffeinatedCoffee from '../components/recipes/NonCaffeinatedCoffee.vue';
+import NonCaffeinatedDrinks from '../components/recipes/NonCaffeinatedDrinks.vue';
 import FrequentlyAskedQuestions from '../components/FrequentlyAskedQuestions/FrequentlyAskedQuestions.vue';
 import SiteMap from '../components/SiteMap/SiteMap.vue'
 
@@ -33,7 +33,7 @@ const router = createRouter({
     {
       path: '/NonCaffeinatedDrinks',
       name: 'NonCaffeinatedDrinks',
-      component: NonCaffeinatedCoffee
+      component: NonCaffeinatedDrinks
     },
     {
       path: '/FAQ',
