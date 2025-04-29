@@ -1,0 +1,99 @@
+@media (max-width: 768px) {
+  .title-section h2,
+  .title-section .caffeine-tagline,
+  .title-section .non-caffeine-tagline {
+    margin-left: 20px;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .coffee-container {
+    width: 1280px;
+    min-height: 30vh !important;
+  }
+  .child-container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .coffee-container .swiper {
+    padding-top: 20px;
+    align-items: center;
+  }
+
+  .coffee-container .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .coffee-container .card-wrapper {
+    margin: 0 10px 20px;
+  }
+
+  .card-list .card-item .card-link {
+    width: 700px;
+    padding-left: 5px;
+    padding-right: 5px;
+    gap: 5px;
+  }
+
+  .card-list .card-link .card-image {
+    width: 320px;
+    height: 450px;
+    top: 10%;
+  }
+
+  .image-holder {
+    height: 520px;
+    margin-top: 25%;
+    border-top-left-radius: 400px;
+    border-top-right-radius: 400px;
+  }
+
+  .drink-info {
+    height: 320px;
+    top: -15px;
+  }
+
+  /* .card-list .card-link .card-title {
+    font-size: 3rem;
+    margin-left: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  } */
+
+  .card-list .card-link .card-title {
+    font-size: 3rem;
+    margin-left: 50px;
+  }
+  .card-list .card-link .card-button {
+    margin-left: 50px;
+  }
+
+  .drink-info hr {
+    width: 80%;
+  }
+
+  /* .card-list .card-link .card-button {
+    font-size: 1.5rem;
+    margin-left: 50px;
+    padding: 10px 20px;
+  } */
+
+  .card-list .card-link .card-title,
+  .card-list .card-link .card-button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block; /* ensure it's centered */
+    text-align: center;
+  }
+
+  .card-list .card-link:hover {
+    transform: scale(1.05);
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}

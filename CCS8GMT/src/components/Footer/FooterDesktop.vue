@@ -35,7 +35,7 @@
 
             <!-- Section: Links  -->
             <section class="footer-links">
-                <div class="container text-center text-md-start mt-5">
+                <div class="sub-footer-container text-center text-md-start mt-5">
                     <div class="row mt-1">
                         <div class="col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <h6 class="footer-heading">

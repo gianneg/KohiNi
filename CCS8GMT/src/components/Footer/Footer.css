@@ -60,7 +60,7 @@ body {
   font-size: 1.05rem; /* Footer links text size */
 }
 
-.container {
+.sub-footer-container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -69,13 +69,13 @@ body {
 }
 
 @media (min-width: 576px) {
-  .container {
+  .sub-footer-container {
       max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container {
+  .sub-footer-container {
       max-width: 720px;
   }
   .text-md-start {
@@ -84,13 +84,13 @@ body {
 }
 
 @media (min-width: 992px) {
-  .container {
+  .sub-footer-container {
       max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
+  .sub-footer-container {
       max-width: 1140px;
   }
 }

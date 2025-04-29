@@ -21,6 +21,7 @@ const fetchCaffeinatedDrinks = async () => {
     caffeineDrinks.value = querySnapshot.docs.map(doc => ({
       id: doc.id,
       title: doc.data().drink_name,
+      drink_tag: doc.data().tags,
       image: doc.data().image_url,
     }));
   } catch (error) {
@@ -68,7 +69,7 @@ onBeforeUnmount(() => {
           This is where the video should be.
       </div>
       <div class="child-container">
-        <div class="container swiper">
+        <div class="coffee-container swiper">
             <div class="card-wrapper">
             <ul class="card-list swiper-wrapper">
                 <li
@@ -77,7 +78,7 @@ onBeforeUnmount(() => {
                 class="card-item swiper-slide"
                 >
                 <div class="card-link">
-                    <h3 class="drink-name">Drink</h3>
+                    <h3 class="drink-name">{{ drink.drink_tag }}</h3>
                     <img :src="drink.image" alt="Card Image" class="card-image" />
                     <div class="image-holder"></div>
                     <div class="drink-info">
@@ -100,4 +101,5 @@ onBeforeUnmount(() => {
 
 <style scoped>
 @import './CoffeeCarousel.css';
+@import './CoffeeCarouselMobile.css';
 </style>
