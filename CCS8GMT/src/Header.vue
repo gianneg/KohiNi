@@ -12,15 +12,8 @@ import NavBar from './components/NavBar/NavBar.vue'
 <style>
 header {
     margin-top: 0px;
-    width: 1280px;
+    width: 100%;
     justify-self: center;
-    line-height: 1.5;
     max-height: 100vh;
-}
-
-@media (min-width: 1200px) {
-    header {
-    width: 1100px;
-    }
 }
 </style>
