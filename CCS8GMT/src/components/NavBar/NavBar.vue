@@ -16,12 +16,19 @@ export default {
   },
   data() {
     return {
-      isMobile: window.innerWidth <= 768,
+      isMobile: window.outerWidth <= 768,
     };
   },
   methods: {
     handleResize() {
-      this.isMobile = window.innerWidth <= 768;
+      if (this.isMobile && (outerWidth <= 768) && (outerWidth > 480)) 
+      {
+        window.outerWidth <= 768;
+      }
+      else if (this.isMobile && (outerWidth <= 480)) 
+      {
+        window.outerWidth <= 480;
+      }
     },
   },
   mounted() {

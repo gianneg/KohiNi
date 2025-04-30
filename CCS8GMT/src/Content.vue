@@ -23,7 +23,8 @@ header {
 }
 
 .container {
-  width: 100%; /* max-width: 1280px; */
+  width: 100%;
+  max-width: 200vw;
   justify-self: center;
 }
 </style>
