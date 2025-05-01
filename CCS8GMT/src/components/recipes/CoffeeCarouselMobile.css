@@ -1,19 +1,26 @@
 @media (max-width: 768px) {
+  .title-section {
+    width: 100%;
+  }
+
   .title-section h2,
   .title-section .caffeine-tagline,
   .title-section .non-caffeine-tagline {
     margin-left: 20px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
   .coffee-container {
-    width: 1280px;
+    width: 100%;
     min-height: 30vh !important;
   }
   .child-container {
+    width: 100%;
     height: auto;
-    padding: 20px;
+    background-color: #ECE0D1;
+    padding-top: 1px;
+    padding-bottom: 20px;
   }
 
   .coffee-container .swiper {
@@ -24,6 +31,7 @@
   .coffee-container .swiper-slide {
     display: flex;
     justify-content: center;
+    width: auto;/* added property */
   }
 
   .coffee-container .card-wrapper {
@@ -31,62 +39,57 @@
   }
 
   .card-list .card-item .card-link {
-    width: 700px;
+    width: 90%; /* added property */
     padding-left: 5px;
     padding-right: 5px;
     gap: 5px;
   }
 
   .card-list .card-link .card-image {
-    width: 320px;
-    height: 450px;
+    width: 100px;
+    height: 130px;
     top: 10%;
   }
 
   .image-holder {
-    height: 520px;
-    margin-top: 25%;
-    border-top-left-radius: 400px;
-    border-top-right-radius: 400px;
+    height: 160px;
+    margin-top: 40%;
+    border-top-left-radius: 300px;
+    border-top-right-radius: 300px;
   }
 
   .drink-info {
-    height: 320px;
+    height: 160px;
     top: -15px;
   }
 
-  /* .card-list .card-link .card-title {
-    font-size: 3rem;
-    margin-left: 50px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  } */
+  .drink-name{
+    font-size: 1rem;
+    margin-left: 5px;
+    top: 10px;
+  }
 
   .card-list .card-link .card-title {
-    font-size: 3rem;
-    margin-left: 50px;
+    font-size: 1rem;
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
+
   .card-list .card-link .card-button {
-    margin-left: 50px;
+    margin-left: 40px;
   }
 
   .drink-info hr {
     width: 80%;
   }
 
-  /* .card-list .card-link .card-button {
-    font-size: 1.5rem;
-    margin-left: 50px;
-    padding: 10px 20px;
-  } */
-
-  .card-list .card-link .card-title,
   .card-list .card-link .card-button {
-    margin-left: auto;
-    margin-right: auto;
-    display: block; /* ensure it's centered */
-    text-align: center;
+    font-size: 1rem;
+    margin-left: 20px;
+    padding: 10px 20px;
   }
+
 
   .card-list .card-link:hover {
     transform: scale(1.05);
