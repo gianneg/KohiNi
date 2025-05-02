@@ -40,28 +40,28 @@
         <div class="contact-info">
           <h3>Contact Information</h3>
           <div class="info-item">
-            <span>📞</span>
+            <span class="icon phone-icon"></span>
             <span>+1012 3456 789</span>
           </div>
           <div class="info-item">
-            <span>✉️</span>
+            <span class="icon email-icon"></span>
             <span>demo@gmail.com</span>
           </div>
-          <div class="form-social-icons">
-            <a href="#" class="icon-link" aria-label="Facebook">
-                <span class="form-fa fa-facebook-f"></span>
+          <div class="contact-social-icons">
+            <a href="#" class="facebook-icon" aria-label="Facebook">
+                <span class="facebook-icon"></span>
             </a>
-            <a href="#" class="icon-link" aria-label="Twitter">
-                <span class="form-fa fa-twitter"></span>
+            <a href="#" class="twitter-icon" aria-label="Twitter">
+                <span class=""></span>
             </a>
-            <a href="#" class="icon-link" aria-label="Instagram">
-                <span class="form-fa fa-instagram"></span>
+            <a href="#" class="instagram-icon" aria-label="Instagram">
+                <span class=""></span>
             </a>
-            <a href="#" class="icon-link" aria-label="Discord">
-                <span class="form-fab fa-discord"></span>
+            <a href="#" class="discord-icon" aria-label="Discord">
+                <span class=""></span>
             </a>
-            <a href="#" class="icon-link" aria-label="GitHub">
-                <span class="form-fab fa-github"></span>
+            <a href="#" class="github-icon" aria-label="GitHub">
+                <span class=""></span>
             </a>
           </div>
         </div>
@@ -93,5 +93,6 @@
   
   <style scoped>
  @import '../assets/ContactUs.css';
+ @import '../assets/ContactUsMobile.css';
   </style>
   

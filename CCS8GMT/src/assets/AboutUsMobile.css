@@ -1,0 +1,53 @@
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .about-us-header {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .about-us-description {
+        font-size: 1rem;
+        text-align: left;
+        margin: 10px;
+    }
+
+    .about-us-container {
+        padding: 15px;
+    }
+
+    .description-container {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .team-member {
+        width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+        border-radius: 30px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member-image {
+        width: 160px;
+        height: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #f0f0f0; /* Optional: Add a background color for better visibility */
+        color: #666; /* Optional: Set text color for the alt text */
+        border-radius: 50%; /* Makes the image circular */
+        object-fit: cover;    
+    }
+        
+    .team-member-name {
+        font-size: 0.9rem;
+    }
+
+    .team-member-role {
+        font-size: 0.8rem;
+    }
+}

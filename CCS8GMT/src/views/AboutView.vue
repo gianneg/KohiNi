@@ -42,4 +42,5 @@ export default {
 
 <style scoped>
 @import '../assets/AboutUs.css';
+@import '../assets/AboutUsMobile.css';
 </style>
