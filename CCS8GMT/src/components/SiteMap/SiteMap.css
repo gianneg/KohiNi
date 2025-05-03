@@ -22,7 +22,7 @@
     align-items: top;
     justify-content: left;
     position: relative;
-    max-width: 100%;
+    max-width: 90%;
     margin: auto;
     gap: 10%;
     font-family: "Poppins", sans-serif;
@@ -38,7 +38,7 @@
 }
 
 .SMHeader{
-    font-size: 25px;
+    font-size: larger;
     text-decoration: underline;
     color: black;
     cursor: default;
