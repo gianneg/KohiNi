@@ -1,0 +1,75 @@
+@media only screen and (max-width: 768px){
+
+    .FAQBanner {
+        min-height: 30vh;
+    }
+    
+    .FAQBase{
+        padding-top: 20px;
+        padding-bottom: 40px;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background-color: #FFF5E8;
+    
+    }
+    
+    #FAQTitle{
+        font-family: "Raleway", sans-serif;
+        font-size: 40px;
+        color:#556B2F;
+    }
+    
+    .FAQContainer{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        max-width: 80%;
+        margin: auto;
+        gap: 10%;
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+    }
+    
+    .FAQQuestion{
+        flex-basis: 100%;
+        margin-bottom: 2%;
+        position: relative;
+        background-color: #ECE0D1;
+        border-radius:25px;
+        text-align:left;
+        text-indent: 3%;
+    }
+    
+    .FAQAnswer{
+        background-color: #ECE0D1;
+        color: black;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        text-indent: 0%;
+        padding-left: 5%;
+        padding-bottom: .5%;
+        padding-top:.5% ;
+        padding-right: 5%;
+    }
+    
+    .FAQbtn {
+        border:none;
+        background-color: #556B2F;
+        border-radius: 25px;
+        cursor: pointer;
+        color: white;
+        margin-left: 3%;
+      }
+      .active{
+        background-color: #556B2F;
+        color: #fff;
+      }
+    
+      .BAct{
+        background-color: #fff;
+        color: #556B2F;
+      }
+  }

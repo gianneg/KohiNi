@@ -1,0 +1,51 @@
+@media only screen and (max-width: 768px){
+
+    .SMBase{
+        padding-top: 20px;
+        padding-bottom: 40px;
+        align-items: center;
+        text-align: left;
+        padding-left: 6%;
+        justify-content: center;
+        background-color: #FFF5E8;
+    }
+    
+    #SMTitle{
+        font-family: "Raleway", sans-serif;
+        font-size: 50px;
+        color: #492310;
+    }
+    
+    .SMContainer{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: top;
+        justify-content: left;
+        position: relative;
+        max-width: 90%;
+        margin: auto;
+        gap: 10%;
+        font-family: "Poppins", sans-serif;
+        font-size: 17px;
+        padding-bottom: 3%;
+    }
+    
+    .SMItem{
+        text-decoration: none;
+        flex-basis: 40%;
+        position: relative;
+        text-align:left;
+    }
+    
+    .SMHeader{
+        font-size: larger;
+        text-decoration: underline;
+        color: black;
+        cursor: default;
+    }
+    
+    .SMLink{
+        color: #556B2F;
+        cursor: pointer;
+    }
+  }

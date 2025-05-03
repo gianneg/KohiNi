@@ -62,4 +62,5 @@
 
 <style scoped>
     @import "./FrequentlyAskedQuestions.css";
+    @import "./FrequentlyAskedQuestionsMobile.css";
 </style>
