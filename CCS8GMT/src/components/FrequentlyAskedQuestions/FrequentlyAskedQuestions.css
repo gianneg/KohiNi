@@ -72,4 +72,11 @@
     color: #556B2F;
   }
 
- 
+  .playbtn {
+    border:none;
+    background-color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #556B2F;
+    margin-left: 3%;
+  }

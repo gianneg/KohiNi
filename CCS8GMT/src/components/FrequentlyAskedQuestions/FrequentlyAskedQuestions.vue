@@ -8,7 +8,7 @@
             <div class="FAQQuestion" v-for="faq in FAQs":key="faq.id" :class="{'active': faq.showans }">
                 <p>{{ faq.Question }}<button class="FAQbtn" @click="ToggleDisplay(faq.id)" :class="{'BAct': faq.showans }">{{ faq.showans ? '&#9650;' : '&#9660;' }}</button></p>
                 <div class="FAQAnswer" v-show="faq.showans">
-                    <p>{{ faq.Answer }}</p>
+                    <p>{{ faq.Answer }} <button class="playbtn" @click="TTSPlay(faq.id)">▷</button></p>
                 </div>
             </div>
         </div>
@@ -50,7 +50,16 @@
                 if (faq) {
                     faq.showans = !faq.showans;
                 } 
-            }
+            },
+            TTSPlay(id){
+                try{
+                const faq = this.FAQs.find(faq => faq.id === id);
+                const Utterance = new SpeechSynthesisUtterance(faq.Answer);
+                speechSynthesis.speak(Utterance);
+                }catch (error) {
+                    console.error("Error reading data:", error);
+                    }
+      },
 
         },
         mounted(){
