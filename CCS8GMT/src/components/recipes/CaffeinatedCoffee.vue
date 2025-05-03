@@ -22,6 +22,7 @@ const fetchCaffeinatedDrinks = async () => {
       id: doc.id,
       title: doc.data().drink_name,
       drink_tag: doc.data().tags,
+      drink_main_tag: doc.data().main_tag,
       image: doc.data().image_url,
     }));
   } catch (error) {
@@ -77,14 +78,24 @@ onBeforeUnmount(() => {
                 :key="drink.id"
                 class="card-item swiper-slide"
                 >
-                <div class="card-link">
-                    <h3 class="drink-name">{{ drink.drink_tag }}</h3>
+                <div class="card-link" @click="$router.push(`/content/${drink.id}`)">
+                    <h3 class="drink-name">{{ drink.drink_main_tag }}</h3>
                     <img :src="drink.image" alt="Card Image" class="card-image" />
                     <div class="image-holder"></div>
                     <div class="drink-info">
                     <h2 class="card-title">{{ drink.title }}</h2>
                     <hr class="hr-line" />
-                    <button class="card-button" @click="$router.push(`/content/${drink.id}`)">Discover</button>
+                    <div class="drink-tags">
+                      <ul class="tags-list">
+                        <li 
+                          v-for="(tag, index) in drink.drink_tag" 
+                          :key="index"
+                          :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Mocha' ? 'mocha-tag' : tags"
+                        >
+                          {{ tag }}
+                        </li>
+                      </ul>
+                    </div>
                     </div>
                 </div>
                 </li>
