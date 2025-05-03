@@ -1,5 +1,5 @@
 <script setup>
-import ContentPage from '../components/ContentPage.vue'
+import ContentPage from '../components/ContentPage/ContentPage.vue'
 </script>
 
 <template>

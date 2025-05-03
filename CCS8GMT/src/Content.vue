@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import Homepage from './components/Homepage/Homepage.vue'
-import ContentPage from './components/ContentPage.vue'
+import ContentPage from './components/ContentPage/ContentPage.vue'
 import Header from './Header.vue';
 import NavBar from './components/NavBar/NavBar.vue';
 import FooterDesktop from './components/Footer/FooterDesktop.vue';

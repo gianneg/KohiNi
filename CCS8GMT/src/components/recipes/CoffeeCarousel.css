@@ -94,6 +94,9 @@
   padding: 5px 10px;
   border-radius: 50px 50px;
   background: #DCA56D;
+  font-family: 'Poppins';
+  font-weight: 300;
+  color: white;
 }
 
 .card-list .card-link .card-image {
@@ -132,35 +135,56 @@
 
 
 .card-list .card-link .card-title {
-  padding-top: 25px;
-  margin-left: 25px;
+
+  margin-left: 15px;
   font-size: 1.30rem;
-  color: #000;
-  font-weight: 600;
+  color: #492310;
+  font-weight: 300;
+  font-family: 'Poppins';
 }
 
 .drink-info hr {
-  width: 260px;
+  width: 220px;
   border: 1px solid #3F1A12;
 }
 
-.card-list .card-link .card-button{
-  color: #3F1A12;
-  padding: 6px 10px;
-  margin-top: 10px;
-  margin-left: 25px;
-  margin-bottom: 15px;
-  border-radius: 50px 50px;
-  font-size: 12px;
-  background: none;
-  cursor: pointer;
-  border: 2px solid #3F1A12;
-  transition: 0.4s ease;
+.drink-tags {
+  max-width: 260px;
 }
 
-.card-list .card-link:hover .card-button{
-  color:#fff;
-  background: #3F1A12;
+.tags-list {
+  position: relative;
+  left: -30px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.caramel-tag {
+  list-style-type: none;
+  background-color: #DCA56D;
+  color: #ffffff;
+  font-family: 'Poppins';
+  border-radius: 90px;
+  padding: 0px 10px;
+}
+
+.mocha-tag {
+  list-style-type: none;
+  background-color: #42270d;
+  color: #ffffff;
+  font-family: 'Poppins';
+  border-radius: 90px;
+  padding: 0px 10px;
+}
+
+.discover-tag {
+  list-style-type: none;
+  background-color: #967259;
+  color: #ffffff;
+  font-family: 'Poppins';
+  border-radius: 90px;
+  padding: 0px 10px;
 }
 
 .card-list .card-link:hover .drink-info{
