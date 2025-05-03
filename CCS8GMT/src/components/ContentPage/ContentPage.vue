@@ -37,7 +37,7 @@
                 <div class="allergy-ribbon">
                 <p class="allergy">Make sure to thoroughly check ingredients to avoid allergies!</p>
               </div>
-              <button class="ingredients-btn">▷ Ingredients</button>
+              <button class="ingredients-btn" @click="TTSIngred()">▷ Ingredients</button>
               <ul class="ingredients-list">
                   <li v-for="(ingredient, index) in drinkData.ingredients" :key="index">
                     <div class="ingredients-list-item">
@@ -47,7 +47,7 @@
               </ul>
             </div>
             
-            <button class="instructions-btn">▷ Instructions</button>
+            <button class="instructions-btn" @click="TTSInstruct()">▷ Instructions</button>
             <div class="instructions-and-fun">
               <!-- Instructions -->
                 <ul class="instructions-list">
@@ -79,6 +79,7 @@
   
 
   <script>
+  //import { useSpeechSynthesis } from '@vueuse/core'
   import { onMounted, ref, watch } from "vue";
   import { useRoute } from "vue-router";
   import { db } from "../../lib/firebase";
@@ -90,7 +91,7 @@
     setup() {
       const route = useRoute();
       const drinkData = ref(null);
-  
+
       const fetchDrinkData = async (id) => {
         try {
           const docRef = doc(db, "Drinks", id);
@@ -121,6 +122,30 @@
         drinkData,
       };
     },
+    methods:{
+      TTSIngred(){
+        try{
+        const ingredients = this.drinkData.ingredients.join(', ');
+        const Utterance = new SpeechSynthesisUtterance(ingredients);
+        speechSynthesis.speak(Utterance);
+        }catch (error) {
+            console.error("Error reading data:", error);
+            }
+      },
+
+      TTSInstruct(){
+        try{
+        const instructions = this.drinkData.instructions.join(', ');
+        const Utterance = new SpeechSynthesisUtterance(instructions);
+        speechSynthesis.speak(Utterance);
+        console.log(speechSynthesis.getVoices());
+        console.log(this.drinkData.ingredients);
+        }catch (error) {
+            console.error("Error reading data:", error);
+            }
+      },
+    }
+    ,
   };
   </script>
 
