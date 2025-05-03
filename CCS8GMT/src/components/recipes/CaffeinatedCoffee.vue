@@ -56,7 +56,7 @@ onMounted(async () => {
 onBeforeUnmount(() => {
   if (swiperInstance) {
     swiperInstance.destroy();
-  }
+  } 
 });
 </script>
 

@@ -21,10 +21,11 @@ const fetchNonCaffeinatedDrinks = async () => {
       id: doc.id,
       title: doc.data().drink_name,
       drink_tag: doc.data().tags,
+      drink_main_tag: doc.data().main_tag,
       image: doc.data().image_url,
     }));
   } catch (error) {
-    console.error("Error fetching non-caffeinated drinks:", error);
+    console.error("Error fetching caffeinated drinks:", error);
   }
 };
 
@@ -73,23 +74,42 @@ onBeforeUnmount(() => {
       <div class="coffee-container swiper">
         <div class="card-wrapper">
           <ul class="card-list swiper-wrapper">
-            <li
-              v-for="drink in nonCaffeineDrinks"
-              :key="drink.id"
-              class="card-item swiper-slide"
-            >
-              <div class="card-link">
-                <h3 class="drink-name">{{ drink.drink_tag }}</h3>
-                <img :src="drink.image" alt="Card Image" class="card-image" />
-                <div class="image-holder"></div>
-                <div class="drink-info">
-                  <h2 class="card-title">{{ drink.title }}</h2>
-                  <hr class="hr-line" />
-                  <button class="card-button">Discover</button>
+                <li
+                v-for="drink in nonCaffeineDrinks"
+                :key="drink.id"
+                class="card-item swiper-slide"
+                >
+                <div class="card-link" @click="$router.push(`/content/${drink.id}`)">
+                    <h3 class="drink-name">{{ drink.drink_main_tag }}</h3>
+                    <img :src="drink.image" alt="Card Image" class="card-image" />
+                    <div class="image-holder"></div>
+                    <div class="drink-info">
+                    <h2 class="card-title">{{ drink.title }}</h2>
+                    <hr class="hr-line" />
+                    <div class="drink-tags">
+                        <ul class="tags-list">
+                        <li 
+                          v-for="(tag, index) in drink.drink_tag" 
+                          :key="index"
+                          :class="{
+                          'caramel-tag': tag === 'Caramel',
+                          'discover-tag': tag === 'Discover',
+                          'mocha-tag': tag === 'Mocha',
+                          'latte-tag': tag === 'Latte',
+                          'strawberry-tag': tag === 'Strawberry',
+                          'apple-tag': tag === 'Apple',
+                          'turmeric-tag': tag === 'Turmeric',
+                          'lemon-tag': tag === 'Lemon'
+                          }"
+                        >
+                          {{ tag }}
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+                </li>
+            </ul>
 
           <div class="swiper-pagination"></div>
           <div class="swiper-slide-button swiper-button-prev"></div>

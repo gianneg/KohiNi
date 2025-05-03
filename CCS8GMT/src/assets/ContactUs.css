@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300');
+
 .contact-container {
-  font-family: Arial, sans-serif;
+  font-family: 'Platypi', sans-serif;
   width: 100%;
   margin-bottom: 10%;
 }
