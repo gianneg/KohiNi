@@ -29,9 +29,9 @@
 <script>
 export default {
   data() {
-    return {
+    return { 
       teamMembers: [
-        { id: 1, name: 'Gianne G. Gaudan', role: 'Developer/Designer', image: 'path/to/bob.jpg' },
+        { id: 1, name: 'Gianne G. Gaudan', role: 'Developer/Designer', image: '/img/Members/CCS8_Gianne.jpg' },
         { id: 2, name: 'John Magbanua', role: 'Developer/Designer', image: 'path/to/bob.jpg' },
         { id: 3, name: 'Alcris Tapic', role: 'Developer/Designer', image: '/img/Members/CCS8_Tapic.jpg' }
       ]
