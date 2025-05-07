@@ -4,7 +4,7 @@
         <!-- Footer -->
         <footer class="footer">
             <!-- Section: Social media -->
-            <section class="social-media-section">
+            <div class="social-media-section">
                 <!-- Left -->
                 <div class="social-text">
                     <span>Get connected with us on social networks:</span>
@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <!-- Right -->
-            </section>
+            </div>
             <!-- Section: Social media -->
 
             <!-- Section: Links  -->
@@ -38,11 +38,14 @@
                 <div class="sub-footer-container text-center text-md-start mt-5">
                     <div class="row mt-1">
                         <div class="col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <h6 class="footer-heading">
-                                <a href="/"><img src="/img/Logo/favicon-32x32.png"></a>COMPANY NAME
-                            </h6>
+                            <div class="footer-logo">
+                                <a href="/"><img src="/img/Logo/favicon-32x32.png" class="footer-image"></a>
+                                <h6 class="footer-heading">
+                                    KohiNi
+                                </h6>
+                            </div>
                             <p class="footer-description">
-                                Here you can use rows and columns to organize your footer content.
+                                Discover the art of coffee brewing with KohiNi. Your journey to the perfect cup starts here.
                             </p>
                         </div>
 
@@ -54,10 +57,9 @@
 
                         <div class="col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 class="footer-heading">USEFUL LINKS</h6>
-                            <p><a href="#!" class="text-reset">Pricing</a></p>
-                            <p><a href="#!" class="text-reset">Settings</a></p>
-                            <p><a href="#!" class="text-reset">Orders</a></p>
-                            <p><a href="#!" class="text-reset">Help</a></p>
+                            <p class="useful-links"><a href="/about" class="text-reset">About Us</a></p>
+                            <p class="useful-links"><a href="/contact" class="text-reset">Contact Us</a></p>
+                            <p class="useful-links"><a href="/FAQ" class="text-reset">FAQS</a></p>
                         </div>
 
                         <div class="col col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
@@ -96,4 +98,5 @@ export default {
 
 <style scoped>
 @import 'Footer.css';
+@import 'FooterMobile.css';
 </style>
