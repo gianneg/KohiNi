@@ -47,12 +47,12 @@
             <span class="icon email-icon"></span>
             <span>demo@gmail.com</span>
           </div>
-          <div class="contact-social-icons">
+          <!-- <div class="contact-social-icons">
             <a href="#" class="facebook-icon" aria-label="Facebook">
                 <span class="facebook-icon"></span>
             </a>
             <a href="#" class="twitter-icon" aria-label="Twitter">
-                <span class=""></span>
+                <span class=""></span> 
             </a>
             <a href="#" class="instagram-icon" aria-label="Instagram">
                 <span class=""></span>
@@ -63,7 +63,7 @@
             <a href="#" class="github-icon" aria-label="GitHub">
                 <span class=""></span>
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
