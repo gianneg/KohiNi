@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0; 
   padding: 0;
   color: white !important;
 }
@@ -16,6 +16,7 @@ body {
 .main-footer-container {
   background-color: rgba(99, 72, 50) !important;
   font-size: 1rem; /* Footer font size */
+  font-family: "Platypi", sans-serif;
 }
 
 /* .footer {
@@ -72,7 +73,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px;
+  margin-left: 20px;
   justify-content: center;
 }
 
@@ -127,7 +128,7 @@ body {
 
 .mx-auto {
   margin-left: auto !important;
-  margin-right: auto !important;
+  /* margin-right: auto !important; */
 }
 
 .mb-4 {
