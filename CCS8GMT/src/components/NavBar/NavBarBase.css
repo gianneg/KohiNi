@@ -68,6 +68,13 @@
     position: relative;
   }
 
+  .input-search {
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+    font-family: 'Poppins';
+  }
+
   .search-btn {
     border: 0;
     background-color: transparent;
@@ -102,3 +109,7 @@
     background-color: #f0f0f0;
   }
   
+  .logo-img {
+    width: 100px;
+    height: 90px;
+  }
