@@ -79,18 +79,18 @@ export default {
         const drinkCategories = [
             {
                 title: "Caffeine-based Drinks",
-                route: "/caffeinatedcoffee",
+                route: "/CaffeinatedCoffee",
                 image: "/img/caramelmacchiato.jpg"
             },
             {
                 title: "Non-caffeinated Drinks",
-                route: "/noncaffeinateddrinks",
+                route: "/NonCaffeinatedDrinks",
                 image: "/img/icedchocolatemilk.jpg"
             },
         ];
 
         const navigateTo = (route) => {
-            window.location.href = route; // or use Vue router if inside a router context
+            window.location.href = route;
         };
 
         return {
