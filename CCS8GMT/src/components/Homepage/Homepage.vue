@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router";
 import { onMounted, ref } from "vue";
 import { db } from "../../lib/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -43,6 +44,7 @@ import DrinkCarousel from "../DrinkCarousel/DrinkCarousel.vue";
 export default {
     components: { DrinkCarousel },
     setup() {
+        const router = useRouter();
         const favoriteItems = ref([]);
 
         const fetchFavoriteDrinks = async () => {
@@ -90,7 +92,7 @@ export default {
         ];
 
         const navigateTo = (route) => {
-            window.location.href = route;
+            router.push(route);
         };
 
         return {
