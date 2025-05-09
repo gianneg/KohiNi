@@ -4,7 +4,7 @@
     </div>
     <div class="FAQBase">
         <h3 id="FAQTitle">Most Popular Questions</h3>
-        <div class="FAQContainer">  
+        <div class="FAQContainer" >  
             <div class="FAQQuestion" v-for="faq in FAQs":key="faq.id" :class="{'active': faq.showans }">
                 <p>{{ faq.Question }}<button class="FAQbtn" @click="ToggleDisplay(faq.id)" :class="{'BAct': faq.showans }">{{ faq.showans ? '&#9650;' : '&#9660;' }}</button></p>
                 <div class="FAQAnswer" v-show="faq.showans">

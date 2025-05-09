@@ -65,6 +65,7 @@
   .active{
     background-color: #556B2F;
     color: #fff;
+    align-self: flex-start;
   }
 
   .BAct{
@@ -80,3 +81,4 @@
     color: #556B2F;
     margin-left: 3%;
   }
+  
