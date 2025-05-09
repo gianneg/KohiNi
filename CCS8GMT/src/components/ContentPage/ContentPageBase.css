@@ -109,13 +109,8 @@
     padding-left: 60px;
 }
 
-.ingredients-btn:hover {
-    background-color: #3e4f21;
-}
-
-.instructions-btn:hover {
-    background-color: #492310;
-    color: white;
+.ingredients-btn:hover, .instructions-btn:hover {
+    transform: scale(1.1);
 }
 
 .ingredients-list {
