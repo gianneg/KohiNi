@@ -46,10 +46,5 @@
   
   <style scoped>
   @import "./NavBarMobile.css";
-
-  .logo-img {
-  max-height: 40px;
-  width: auto;
-}
   </style>
   
