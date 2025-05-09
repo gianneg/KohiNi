@@ -2,7 +2,7 @@
     <nav class="navbar">
       <div class="mobile-left">
         <div class="hamburger" @click="toggleMenu">☰</div>
-        <img src="/img/Logo/KohiniLogo.png" alt="KohiNi Logo" class="logo-img" />
+        <img src="/img/Logo/KohiNiLogo.png" alt="KohiNi Logo" class="logo-img" />
       </div>
   
       <!-- Overlay to close menu when clicking outside -->
