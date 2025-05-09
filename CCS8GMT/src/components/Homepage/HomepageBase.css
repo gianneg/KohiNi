@@ -75,6 +75,10 @@
     border-bottom-right-radius: 30px;
 }
 
+.card:hover {
+    transform: scale(1.1);
+}
+
 .card-title {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
