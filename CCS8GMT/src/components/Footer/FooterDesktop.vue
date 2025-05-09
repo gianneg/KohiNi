@@ -53,7 +53,7 @@
                                 <router-link to="/CaffeinatedCoffee" class="text-reset">Caffeinated Coffee</router-link>
                             </p>
                             <p class="recipe-non-caffein">
-                                <router-link to="/NonCaffeinatedDrinks" class="text-reset">Non-Caffeinated Coffee</router-link>
+                                <router-link to="/NonCaffeinatedDrinks" class="text-reset">Non-Caffeinated Drink</router-link>
               </p>
                         </div>
 
