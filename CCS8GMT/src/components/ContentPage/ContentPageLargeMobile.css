@@ -20,6 +20,11 @@
         gap: 0px;
     }
 
+    .drink-description {
+        width: 200px;
+        font-family: 'Poppins';
+    }
+
     .name-left {
         text-align: left;
         gap: 0px;
@@ -98,6 +103,15 @@
         font-weight: 700;
         color: white;
         padding-left: 20px;
+    }
+
+    .ingredients-btn:hover {
+        background-color: #3e4f21;
+    }
+    
+    .instructions-btn:hover {
+        background-color: #492310;
+        color: white;
     }
 
     .ingredients-list {

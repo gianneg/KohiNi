@@ -50,6 +50,11 @@
     max-width: 260px;
 }
 
+.drink-description {
+    width: 200px;
+    font-family: 'Poppins';
+}
+
 .tags-list {
     display: flex;
     flex-direction: row;
@@ -102,6 +107,15 @@
     font-weight: 700;
     color: white;
     padding-left: 60px;
+}
+
+.ingredients-btn:hover {
+    background-color: #3e4f21;
+}
+
+.instructions-btn:hover {
+    background-color: #492310;
+    color: white;
 }
 
 .ingredients-list {
