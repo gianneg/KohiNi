@@ -36,6 +36,41 @@
             height: 270px;
         }
 
+        .card::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: radial-gradient(circle at 50% 100%, #fff 40%, transparent 41%);
+            background-repeat: repeat-x;
+            background-size: 40px 40px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+        
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: radial-gradient(circle at 50% 100%, #c1a088 40%, transparent 41%);
+            background-repeat: repeat-x;
+            background-size: 40px 40px;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+        
+        .card:hover::before,
+        .card:hover::after {
+            transform: translateY(0);
+        }
+
         .card:hover {
             transform: scale(1.1);
         }
