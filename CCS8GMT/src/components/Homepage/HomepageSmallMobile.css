@@ -23,7 +23,7 @@
         /* Student Favorite Cards */
         .cards {
             display: flex;
-            justify-self: center;
+            justify-content: center;
             align-items: center;
             flex-direction: row;
             gap: 50px;
