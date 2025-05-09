@@ -2,7 +2,7 @@
     <nav class="navbar">
       <div class="mobile-left">
         <div class="hamburger" @click="toggleMenu">☰</div>
-        <div class="logo">Placeholder</div>
+        <img src="/img/Logo/KohiniLogo.png" alt="KohiNi Logo" class="logo-img" />
       </div>
   
       <!-- Overlay to close menu when clicking outside -->
@@ -46,5 +46,10 @@
   
   <style scoped>
   @import "./NavBarMobile.css";
+
+  .logo-img {
+  max-height: 40px;
+  width: auto;
+}
   </style>
   
