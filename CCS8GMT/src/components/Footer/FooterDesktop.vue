@@ -59,7 +59,7 @@
                             <h6 class="footer-heading">USEFUL LINKS</h6>
                             <p class="useful-links"><a href="/about" class="text-reset">About Us</a></p>
                             <p class="useful-links"><a href="/contact" class="text-reset">Contact Us</a></p>
-                            <p class="useful-links"><a href="/FAQ" class="text-reset">FAQS</a></p>
+                            <p class="useful-links"><a href="/faq" class="text-reset">Frequently Asked Questions</a></p>
                         </div>
 
                         <div class="col col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
