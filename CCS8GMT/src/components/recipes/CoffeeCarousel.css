@@ -179,9 +179,9 @@
   padding: 0px 10px;
 }
 
-.mocha-tag {
+.lemon-tag{
   list-style-type: none;
-  background-color: #42270d;
+  background-color: #ffef5d;
   color: #ffffff;
   font-family: 'Poppins';
   border-radius: 90px;
@@ -197,16 +197,7 @@
   padding: 0px 10px;
 }
 
-.latte-tag{
-  list-style-type: none;
-  background-color: #967259;
-  color: #ffffff;
-  font-family: 'Poppins';
-  border-radius: 90px;
-  padding: 0px 10px;
-}
-
-.strawberry-tag{
+.strawberry-tag {
   list-style-type: none;
   background-color: #91261a;
   color: #ffffff;
@@ -215,7 +206,7 @@
   padding: 0px 10px;
 }
 
-.apple-tag{
+.apple-tag {
   list-style-type: none;
   background-color: #5d0000;
   color: #ffffff;
@@ -224,18 +215,36 @@
   padding: 0px 10px;
 }
 
-.turmeric-tag{
+.mocha-tag {
   list-style-type: none;
-  background-color: #7e5e00;
+  background-color: #42270d;
   color: #ffffff;
   font-family: 'Poppins';
   border-radius: 90px;
   padding: 0px 10px;
 }
 
-.lemon-tag{
+.dairy-tag {
   list-style-type: none;
-  background-color: #ffef5d;
+  background-color: #060056;
+  color: #ffffff;
+  font-family: 'Poppins';
+  border-radius: 90px;
+  padding: 0px 10px;
+}
+
+.trending-tag {
+  list-style-type: none;
+  background-color: #3e4f21;
+  color: #ffffff;
+  font-family: 'Poppins';
+  border-radius: 90px;
+  padding: 0px 10px;
+}
+
+.turmeric-tag {
+  list-style-type: none;
+  background-color: #7e5e00;
   color: #ffffff;
   font-family: 'Poppins';
   border-radius: 90px;
