@@ -35,6 +35,11 @@
         line-height: 30px;
     }
 
+    .drink-description {
+        max-width: 220px;
+        font-family: 'Poppins';
+    }
+
     .drink-image {
         height: 100px;
         width: 100px;
@@ -107,11 +112,6 @@
     .instructions-btn:hover {
         background-color: #492310;
         color: white;
-    }
-
-    .drink-description {
-        width: 100px;
-        font-family: 'Poppins';
     }
 
     .ingredients-list {
