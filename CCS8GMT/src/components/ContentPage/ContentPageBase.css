@@ -156,6 +156,7 @@
     top: 10px;
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
+    text-align: center;
 }
 
 .ingredients-section {
@@ -208,16 +209,19 @@
 
 .instructions-and-fun {
     display: flex;
-    gap: 80px;
-    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 0px 20px 20px;
+    box-sizing: border-box;
 }
 
 .instructions-list {
-    padding-left: 100px;
     font-family: 'Poppins';
     font-weight: 300;
     color: #492310;
     width: 600px;
+    padding-left: 60px;
 }
 
 .instructions-list-item {
@@ -233,6 +237,7 @@
     padding: 20px;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
+    margin-left: auto;
 }
 
 .fun-fact h4 {
