@@ -50,10 +50,10 @@
                         <div class="col col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 class="footer-heading">RECIPES</h6>
                             <p class="recipe-caffein">
-                                <router-link to="/CaffeinatedCoffee" class="text-reset">Caffeinated Coffee</router-link>
+                                <router-link to="/CaffeinatedCoffee" class="text-reset">Caffeinated Drinks</router-link>
                             </p>
                             <p class="recipe-non-caffein">
-                                <router-link to="/NonCaffeinatedDrinks" class="text-reset">Non-Caffeinated Drink</router-link>
+                                <router-link to="/NonCaffeinatedDrinks" class="text-reset">Non-Caffeinated Drinks</router-link>
               </p>
                         </div>
 
@@ -72,7 +72,7 @@
 
                         <div class="col col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                             <h6 class="footer-heading">CONTACT</h6>
-                            <p class="contact-email"><span class="icon-email"></span> info@example.com</p>
+                            <p class="contact-email"><span class="icon-email"></span> contactus@kohini.com</p>
                             <p class="contact-cellphone"><span class="icon-phone"></span> +01 234 567 88</p>
                             <p class="contact-telephone"><span class="icon-print"></span> +01 234 567 89</p>
                         </div>
