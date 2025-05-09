@@ -26,11 +26,11 @@
   
       <!-- Search Bar -->
       <div class="search-bar">
-      <input
+      <input class="input-search"
         type="text"
         v-model="searchQuery"
         @input="searchDrinks"
-        placeholder="Have a drink in mind? Search it here!"
+        placeholder="Have a drink in mind?"
       />
 
       <!-- Search Results Dropdown -->
