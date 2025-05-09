@@ -8,6 +8,7 @@
         <div class="cards">
             <div class="card" @click="$router.push(`/content/${item.id}`)" v-for="(item, index) in favoriteItems" :key="index" >
                 <h5 class="card-title">{{ item.title }}</h5>
+                <p>Try hovering above me! Or press me to view my recipe.</p>
             </div>
         </div>
     </div>
