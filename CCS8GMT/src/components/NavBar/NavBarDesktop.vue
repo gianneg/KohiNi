@@ -30,16 +30,16 @@
         type="text"
         v-model="searchQuery"
         @input="searchDrinks"
-        placeholder="Search drinks..."
+        placeholder="Have a drink in mind? Search it here!"
       />
-      <button class="search-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-      </button>
 
       <!-- Search Results Dropdown -->
-      <ul v-if="searchResults.length" class="search-results">
-        <li v-for="drink in searchResults" :key="drink.id" @click="goToContent(drink.id)">
-          {{ drink.name }}
+      <ul v-if="searchQuery" class="search-results">
+        <li v-if="searchResults.length" v-for="drink in searchResults" :key="drink.id" @click="goToContent(drink.id)">
+          {{ drink.drink_name }}
+        </li>
+        <li v-else class="no-results">
+          No results found.
         </li>
       </ul>
     </div>
@@ -89,7 +89,7 @@
           return;
         }
         this.searchResults = this.drinks.filter((drink) =>
-          drink.name.toLowerCase().includes(query)
+          (drink.drink_name || "").toLowerCase().includes(query)
         );
       },
       goToContent(drinkId) {
