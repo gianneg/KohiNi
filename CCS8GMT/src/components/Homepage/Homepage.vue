@@ -8,7 +8,6 @@
         <div class="cards">
             <div class="card" @click="$router.push(`/content/${item.id}`)" v-for="(item, index) in favoriteItems" :key="index" >
                 <h5 class="card-title">{{ item.title }}</h5>
-                <p class="card-caption">{{ item.description }}</p>
             </div>
         </div>
     </div>
@@ -65,7 +64,6 @@ export default {
                     fetchedItems.push({
                         id: doc.id,
                         title: data.drink_name,
-                        description: data.description || "No description available",
                     });
                 });
                 favoriteItems.value = fetchedItems;

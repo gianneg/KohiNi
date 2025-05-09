@@ -100,6 +100,20 @@
         padding-left: 20px
     }
 
+    .ingredients-btn:hover {
+        background-color: #3e4f21;
+    }
+    
+    .instructions-btn:hover {
+        background-color: #492310;
+        color: white;
+    }
+
+    .drink-description {
+        width: 100px;
+        font-family: 'Poppins';
+    }
+
     .ingredients-list {
         padding-left: 50px;
         font-family: 'Poppins';

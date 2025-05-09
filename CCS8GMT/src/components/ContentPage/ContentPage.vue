@@ -24,7 +24,7 @@
                     </li>
                   </ul>
                 </div>
-                <p>{{ drinkData.description }}</p>
+                <p class="drink-description">{{ drinkData.description }}</p>
               </div>
                 <img :src="drinkData.image_url" alt="Drink Image" class="drink-image"/>
               </div>
