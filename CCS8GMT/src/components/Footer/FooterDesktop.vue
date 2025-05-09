@@ -39,10 +39,8 @@
                     <div class="row mt-1">
                         <div class="col col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <div class="footer-logo">
-                                <a href="/"><img src="/img/Logo/favicon-32x32.png" class="footer-image"></a>
-                                <h6 class="footer-heading">
-                                    KohiNi
-                                </h6>
+                                <router-link to="/"><img src="/img/Logo/favicon-32x32.png" class="footer-image" /></router-link>
+                                <h6 class="footer-heading">KohiNi</h6>
                             </div>
                             <p class="footer-description">
                                 Discover the art of coffee brewing with KohiNi. Your journey to the perfect cup starts here.
@@ -51,20 +49,30 @@
 
                         <div class="col col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 class="footer-heading">RECIPES</h6>
-                            <p class="recipe-caffein"><a href="/CaffeinatedCoffee" class="text-reset">Caffeinated Coffee</a></p>
-                            <p class="recipe-non-caffein"><a href="/NonCaffeinatedCoffee" class="text-reset">Non-Caffeinated Coffee</a></p>
+                            <p class="recipe-caffein">
+                                <router-link to="/CaffeinatedCoffee" class="text-reset">Caffeinated Drinks</router-link>
+                            </p>
+                            <p class="recipe-non-caffein">
+                                <router-link to="/NonCaffeinatedDrinks" class="text-reset">Non-Caffeinated Drinks</router-link>
+              </p>
                         </div>
 
                         <div class="col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                             <h6 class="footer-heading">USEFUL LINKS</h6>
-                            <p class="useful-links"><a href="/about" class="text-reset">About Us</a></p>
-                            <p class="useful-links"><a href="/contact" class="text-reset">Contact Us</a></p>
-                            <p class="useful-links"><a href="/FAQ" class="text-reset">FAQS</a></p>
+                            <p class="useful-links">
+                                <router-link to="/about" class="text-reset">About Us</router-link>
+                            </p>
+                            <p class="useful-links">
+                                <router-link to="/contact" class="text-reset">Contact Us</router-link>
+                            </p>
+                            <p class="useful-links">
+                                <router-link to="/faq" class="text-reset">Frequently Asked Questions</router-link>
+              </p>
                         </div>
 
                         <div class="col col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                             <h6 class="footer-heading">CONTACT</h6>
-                            <p class="contact-email"><span class="icon-email"></span> info@example.com</p>
+                            <p class="contact-email"><span class="icon-email"></span> contactus@kohini.com</p>
                             <p class="contact-cellphone"><span class="icon-phone"></span> +01 234 567 88</p>
                             <p class="contact-telephone"><span class="icon-print"></span> +01 234 567 89</p>
                         </div>

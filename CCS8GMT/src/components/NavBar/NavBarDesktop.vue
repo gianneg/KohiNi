@@ -22,21 +22,41 @@
       </div>
   
       <!-- Logo -->
-      <div class="logo"><span class="logo-name" @click="navigateTo('/')">Placeholder</span></div>
+      <div class="logo"><span class="logo-name" @click="navigateTo('/')"><img src="/img/Logo/KohiNiLogo.png" class="logo-img"></span></div>
   
       <!-- Search Bar -->
       <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-        <button class="search-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-icon lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></button>
-      </div>
+      <input class="input-search"
+        type="text"
+        v-model="searchQuery"
+        @input="searchDrinks"
+        placeholder="Have a drink in mind?"
+      />
+
+      <!-- Search Results Dropdown -->
+      <ul v-if="searchQuery" class="search-results">
+        <li v-if="searchResults.length" v-for="drink in searchResults" :key="drink.id" @click="goToContent(drink.id)">
+          {{ drink.drink_name }}
+        </li>
+        <li v-else class="no-results">
+          No results found.
+        </li>
+      </ul>
+    </div>
     </nav>
 </template>
   
   <script>
+  import { collection, getDocs } from "firebase/firestore";
+  import { db } from "../../lib/firebase";
+
   export default {
     data() {
       return {
         openDropdown: null, // Track which dropdown is open
+        searchQuery: "",
+        drinks: [],
+        searchResults: [],
       };
     },
     methods: {
@@ -54,9 +74,33 @@
           this.openDropdown = null;
         }
       },
+      async fetchDrinks() {
+        const drinksCollection = collection(db, "Drinks");
+        const drinksSnapshot = await getDocs(drinksCollection);
+        this.drinks = drinksSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+      },
+      searchDrinks() {
+        const query = this.searchQuery.trim().toLowerCase();
+        if (!query) {
+          this.searchResults = [];
+          return;
+        }
+        this.searchResults = this.drinks.filter((drink) =>
+          (drink.drink_name || "").toLowerCase().includes(query)
+        );
+      },
+      goToContent(drinkId) {
+        this.searchQuery = "";
+        this.searchResults = [];
+        this.$router.push(`/content/${drinkId}`);
+      },
     },
     mounted() {
       document.addEventListener("click", this.closeDropdown);
+      this.fetchDrinks();
     },
     beforeUnmount() {
       document.removeEventListener("click", this.closeDropdown);

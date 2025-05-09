@@ -5,6 +5,7 @@
     background-color: #ece0d1;
     color: #492310;
     width: 100%;
+    font-family: 'Poppins';
   }
 
   .nav-links {
@@ -18,8 +19,9 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 600;
     color: #492310;
+    font-family: 'Poppins';
   }
   
   /* Dropdown Container */
@@ -63,6 +65,14 @@
 
   .search-bar {
     display: flex;
+    position: relative;
+  }
+
+  .input-search {
+    width: 200px;
+    height: 40px;
+    font-size: 15px;
+    font-family: 'Poppins';
   }
 
   .search-btn {
@@ -70,3 +80,36 @@
     background-color: transparent;
   }
   
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 20;
+  }
+  .no-results {
+    padding: 8px;
+    color: #888;
+    font-style: italic;
+  }
+
+  .search-results li {
+    padding: 8px;
+    cursor: pointer;
+  }
+
+  .search-results li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .logo-img {
+    width: 100px;
+    height: 90px;
+  }
