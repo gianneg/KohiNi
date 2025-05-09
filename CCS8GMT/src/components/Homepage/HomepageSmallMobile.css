@@ -23,6 +23,7 @@
         .cards {
             display: flex;
             justify-self: center;
+            align-items: center;
             flex-direction: row;
             gap: 50px;
         }
@@ -88,7 +89,9 @@
         background-color: #556B2F;
         color: #FFFFFF;;
         border-radius: 20px 0px 0px 20px;
-        margin-top: -95px;
+        height: 100px;
+        margin-top: -80px;
+        height: 40px;
         margin-left: 20px;
         padding-right: 0px;
     }
