@@ -22,7 +22,7 @@
       </div>
   
       <!-- Logo -->
-      <div class="logo"><span class="logo-name" @click="navigateTo('/')"><img src="/img/Logo/KohiniLogo.png" class="logo-img"></span></div>
+      <div class="logo"><span class="logo-name" @click="navigateTo('/')"><img src="/img/Logo/KohiNiLogo.png" class="logo-img"></span></div>
   
       <!-- Search Bar -->
       <div class="search-bar">
