@@ -37,7 +37,7 @@
                 <div class="allergy-ribbon">
                 <p class="allergy">Make sure to thoroughly check ingredients to avoid allergies!</p>
               </div>
-              <button class="ingredients-btn" @click="TTSIngred()">▷ Ingredients</button>
+              <button class="ingredients-btn" @click="TTSIngred()">▷ Ingredients [Click me to enable text-to-speech]</button>
               <ul class="ingredients-list">
                   <li v-for="(ingredient, index) in drinkData.ingredients" :key="index">
                     <div class="ingredients-list-item">
@@ -47,7 +47,7 @@
               </ul>
             </div>
             
-            <button class="instructions-btn" @click="TTSInstruct()">▷ Instructions</button>
+            <button class="instructions-btn" @click="TTSInstruct()">▷ Instructions [Click me to enable text-to-speech]</button>
             <div class="instructions-and-fun">
               <!-- Instructions -->
                 <ul class="instructions-list">
@@ -109,7 +109,6 @@
       const loadDrink = async () => {
         const id = route.params.id;
         await fetchDrinkData(id);
-        await fetchSimilarDrinks(id);
       };
   
       onMounted(loadDrink);

@@ -6,10 +6,9 @@
     <div class="student-favorites">
         <h2 id="favorites-title">Student Favorites!</h2>
         <div class="cards">
-            <div class="card" v-for="(item, index) in favoriteItems" :key="index">
-                <div class="card-image">Photo</div>
+            <div class="card" @click="$router.push(`/content/${item.id}`)" v-for="(item, index) in favoriteItems" :key="index" >
                 <h5 class="card-title">{{ item.title }}</h5>
-                <p class="card-caption">{{ item.caption }}</p>
+                <p class="card-caption">{{ item.description }}</p>
             </div>
         </div>
     </div>
@@ -36,30 +35,71 @@
 </template>
 
 <script>
-    import DrinkCarousel from "../DrinkCarousel/DrinkCarousel.vue";
+import { onMounted, ref } from "vue";
+import { db } from "../../lib/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import DrinkCarousel from "../DrinkCarousel/DrinkCarousel.vue";
 
-    export default {
-        components: { DrinkCarousel }
-        ,
-        data() {
-            return {
-                favoriteItems: [
-                    { title: "Title 1", caption: "Caption 1" },
-                    { title: "Title 2", caption: "Caption 2" },
-                    { title: "Title 3", caption: "Caption 3" },
-                ],
-                drinkCategories: [
-                    { title: "Caffeine-based Drinks", route: "/caffeinatedcoffee", image: "/img/caramelmacchiato.jpg" },
-                    { title: "Non-caffeinated Drinks", route: "/noncaffeinateddrinks", image: "/img/icedchocolatemilk.jpg" },
-                ],
-            };
-        },
-        methods: {
-            navigateTo(route) {
-                this.$router.push(route);
+export default {
+    components: { DrinkCarousel },
+    setup() {
+        const favoriteItems = ref([]);
+
+        const fetchFavoriteDrinks = async () => {
+            try {
+                const drinksRef = collection(db, "Drinks");
+                const q = query(
+                    drinksRef,
+                    where("drink_name", "in", [
+                        "Caramel Macchiato",
+                        "Spanish Iced Latte",
+                        "Espresso"
+                    ])
+                );
+                const querySnapshot = await getDocs(q);
+                const fetchedItems = [];
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    fetchedItems.push({
+                        id: doc.id,
+                        title: data.drink_name,
+                        description: data.description || "No description available",
+                    });
+                });
+                favoriteItems.value = fetchedItems;
+            } catch (error) {
+                console.error("Error fetching favorite drinks:", error);
+            }
+        };
+
+        onMounted(() => {
+            fetchFavoriteDrinks();
+        });
+
+        const drinkCategories = [
+            {
+                title: "Caffeine-based Drinks",
+                route: "/caffeinatedcoffee",
+                image: "/img/caramelmacchiato.jpg"
             },
-        },
-    };
+            {
+                title: "Non-caffeinated Drinks",
+                route: "/noncaffeinateddrinks",
+                image: "/img/icedchocolatemilk.jpg"
+            },
+        ];
+
+        const navigateTo = (route) => {
+            window.location.href = route; // or use Vue router if inside a router context
+        };
+
+        return {
+            favoriteItems,
+            drinkCategories,
+            navigateTo
+        };
+    }
+};
 </script>
 
 <style scoped>

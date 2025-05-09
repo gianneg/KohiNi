@@ -149,7 +149,7 @@ body {
 
 .footer-heading {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 1.2rem; /* Heading font size increased */
 }
 
@@ -195,7 +195,7 @@ body {
 }
 
 .fw-bold {
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .footer-copyright {
