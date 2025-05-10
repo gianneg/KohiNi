@@ -22,7 +22,7 @@
 .FAQContainer{
     display:flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     position: relative;
     max-width: 80%;
@@ -52,6 +52,7 @@
     padding-bottom: .5%;
     padding-top:.5% ;
     padding-right: 5%;
+    height: 135px;
 }
 
 .FAQbtn {
@@ -65,7 +66,6 @@
   .active{
     background-color: #556B2F;
     color: #fff;
-    align-self: flex-start;
   }
 
   .BAct{
