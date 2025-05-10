@@ -1,6 +1,6 @@
 <template>
     <div class="video-section">
-        This is where the video should be.
+        <img src="/img/banners/HomeBanner.png" alt="Banner" class="banner-image"/>
     </div>
 
     <div class="student-favorites">
@@ -108,4 +108,16 @@ export default {
     @import "./HomepageTablet.css"; /*1024px*/
     @import "./HomepageLargeMobile.css"; /*768px*/
     @import "./HomepageSmallMobile.css"; /*480px*/
+
+    
+
+    .banner-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
 </style>

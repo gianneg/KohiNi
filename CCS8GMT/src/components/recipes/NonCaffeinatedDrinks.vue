@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
       </p>
     </div>
     <div class="video-section">
-      This is where the video should be.
+      <img src="/img/banners/NonCoffeeBanner.png" alt="Banner" class="banner-image"/>
     </div>
     <div class="child-container">
       <div class="coffee-container swiper">
@@ -125,4 +125,16 @@ onBeforeUnmount(() => {
 <style scoped>
 @import './CoffeeCarousel.css';
 @import './CoffeeCarouselMobile.css';
+
+
+
+.banner-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
 </style>
