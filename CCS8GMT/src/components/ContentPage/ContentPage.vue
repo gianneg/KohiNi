@@ -18,13 +18,13 @@
                     <li 
                       v-for="(tag, index) in drinkData.tags" 
                       :key="index"
-                      :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : 'tags'"
+                      :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Strawberry' ? 'strawberry-tag' : tag === 'Turmeric' ? 'turmeric-tag' : tag === 'Apple' ? 'apple-tag' : tag === 'Lemon' ? 'lemon-tag' : tag === 'Trending' ? 'trending-tag' : tag === 'Mocha' ? 'mocha-tag' : tag === 'Dairy' ? 'dairy-tag' : 'tags'"
                     >
                       {{ tag }}
                     </li>
                   </ul>
                 </div>
-                <p>{{ drinkData.description }}</p>
+                <p class="drink-description">{{ drinkData.description }}</p>
               </div>
                 <img :src="drinkData.image_url" alt="Drink Image" class="drink-image"/>
               </div>

@@ -8,7 +8,7 @@
         <div class="cards">
             <div class="card" @click="$router.push(`/content/${item.id}`)" v-for="(item, index) in favoriteItems" :key="index" >
                 <h5 class="card-title">{{ item.title }}</h5>
-                <p class="card-caption">{{ item.description }}</p>
+                <p class="card-caption">Press me!</p>
             </div>
         </div>
     </div>
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { useRouter } from "vue-router";
 import { onMounted, ref } from "vue";
 import { db } from "../../lib/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
@@ -43,6 +44,7 @@ import DrinkCarousel from "../DrinkCarousel/DrinkCarousel.vue";
 export default {
     components: { DrinkCarousel },
     setup() {
+        const router = useRouter();
         const favoriteItems = ref([]);
 
         const fetchFavoriteDrinks = async () => {
@@ -63,7 +65,6 @@ export default {
                     fetchedItems.push({
                         id: doc.id,
                         title: data.drink_name,
-                        description: data.description || "No description available",
                     });
                 });
                 favoriteItems.value = fetchedItems;
@@ -79,18 +80,18 @@ export default {
         const drinkCategories = [
             {
                 title: "Caffeine-based Drinks",
-                route: "/caffeinatedcoffee",
+                route: "/CaffeinatedCoffee",
                 image: "/img/caramelmacchiato.jpg"
             },
             {
                 title: "Non-caffeinated Drinks",
-                route: "/noncaffeinateddrinks",
+                route: "/NonCaffeinatedDrinks",
                 image: "/img/icedchocolatemilk.jpg"
             },
         ];
 
         const navigateTo = (route) => {
-            window.location.href = route; // or use Vue router if inside a router context
+            router.push(route);
         };
 
         return {

@@ -35,6 +35,11 @@
         line-height: 30px;
     }
 
+    .drink-description {
+        max-width: 220px;
+        font-family: 'Poppins';
+    }
+
     .drink-image {
         height: 100px;
         width: 100px;
@@ -62,7 +67,7 @@
         border-radius: 90px;
         padding: 0px 10px;
     }
-
+    
     .discover-tag {
         list-style-type: none;
         background-color: #967259;
@@ -71,6 +76,69 @@
         border-radius: 90px;
         padding: 0px 10px;
     }
+    
+    .strawberry-tag {
+        list-style-type: none;
+        background-color: #91261a;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .apple-tag {
+        list-style-type: none;
+        background-color: #5d0000;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .mocha-tag {
+        list-style-type: none;
+        background-color: #42270d;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .dairy-tag {
+        list-style-type: none;
+        background-color: #060056;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .trending-tag {
+        list-style-type: none;
+        background-color: #3e4f21;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .turmeric-tag {
+        list-style-type: none;
+        background-color: #7e5e00;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+
+    .lemon-tag{
+        list-style-type: none;
+        background-color: #ffef5d;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+      }
 
     .allergy {
         width: 200px;
@@ -97,7 +165,12 @@
         font-family: 'Poppins';
         font-weight: 700;
         color: white;
-        padding-left: 20px
+        padding-left: 20px;
+        font-size: 14px;
+    }
+
+    .ingredients-btn:hover, .instructions-btn:hover {
+        transform: scale(1.1);
     }
 
     .ingredients-list {
@@ -127,26 +200,32 @@
         font-family: 'Poppins';
         font-weight: 700;
         color: #492310;
-        padding-left: 20px;
+        font-size: 14px;
     }
 
     .instructions-and-fun {
         display: flex;
-        gap: 80px;
-        padding-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-between; /* push left and right */
+        align-items: flex-start;
+        width: 100%;
+        gap: 10px; /* small horizontal gap if needed */
+        padding: 0 10px 20px 10px; /* small side padding */
+        box-sizing: border-box;
     }
-
+    
     .instructions-list {
-        padding-left: 50px;
         font-family: 'Poppins';
         font-weight: 300;
         color: #492310;
-        width: 400px;
+        width: 55%; /* roughly half width */
+        max-width: none; /* remove hard max width */
         font-size: 12px;
+        padding-left: 10px; /* remove extra padding */
     }
-
+    
     .instructions-list-item {
-        width: 150px;
+        width: 100%; /* take full container width */
     }
 
     .fun-fact {
@@ -154,11 +233,12 @@
         color: white;
         font-family: 'Poppins';
         font-weight: 300;
-        width: 500px;
-        padding: 20px;
+        width: 35%; /* fits alongside instructions */
+        max-width: none; /* remove hard max width */
+        padding: 10px;
         font-size: 12px;
-        border-top-left-radius: 40px;
-        border-bottom-left-radius: 40px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
     }
 
     .fun-fact h4 {

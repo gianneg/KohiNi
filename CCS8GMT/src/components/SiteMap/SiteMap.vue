@@ -12,7 +12,7 @@
                 <p class="SMLink" @click="navigate('/faq')">FAQ</p>
             </div>
             <div class="SMItem">
-                <h4 class="SMHeader">Recipies</h4>
+                <h4 class="SMHeader">Recipes</h4>
                 <p class="SMLink" @click="navigate('/CaffeinatedCoffee')">Caffeinated Drinks</p>
                 <p class="SMLink" @click="navigate('/NonCaffeinatedDrinks')">Non-Caffeinated Drinks</p>
             </div>

@@ -99,7 +99,9 @@ onBeforeUnmount(() => {
                           'strawberry-tag': tag === 'Strawberry',
                           'apple-tag': tag === 'Apple',
                           'turmeric-tag': tag === 'Turmeric',
-                          'lemon-tag': tag === 'Lemon'
+                          'lemon-tag': tag === 'Lemon',
+                          'trending-tag': tag === 'Trending',
+                          'dairy-tag': tag === 'Dairy'
                           }"
                         >
                           {{ tag }}

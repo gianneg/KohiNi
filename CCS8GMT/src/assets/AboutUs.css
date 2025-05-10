@@ -13,7 +13,6 @@
     font-family: 'Platypi', sans-serif;
     line-height: 1.6;
     color: #333;
-    /* padding: 20px; */
     max-width: 100%;
     min-height: 100vh;
     margin: 0 auto;
@@ -26,7 +25,7 @@
     margin-bottom: 20px;
     margin-left: 100px;
     color: rgb(73, 35, 16);
-}
+} 
 
 .description-container{
     align-items: center;
@@ -51,9 +50,8 @@
 }
 
 .team-section {
-    background-color: #ECE0D1;
     margin-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
     height: auto;
 }
 
@@ -66,48 +64,127 @@
 }
 
 .team-member-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 20px;
-    gap: 50px;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    width: 100%;
+    margin: auto;
 }
-
 .team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: auto;
-    width: 200px;
+  display: flex;
+  padding: 40px;
+  overflow: hidden;
+  align-items: center;
 }
 
-.team-member-image {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 10px;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+.box-1 {
+  background-color: #ECE0D1; /* light peach-pink */
 }
 
-.team-member-name {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: rgb(73, 35, 16);
+.box-2 {
+  background-color: #C1A088; /* light sky blue */
 }
 
-.team-member-role {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
+.box-3 {
+  background-color: #ECE0D1; /* light cream yellow */
+}
+
+.team-member-image-1,
+.team-member-image-2,
+.team-member-image-3 {
+  margin-top: 0px;
+  margin-left: 50px;
+  margin-right: 0px;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.team-member-image-2 {
+  margin-left: 0px;
+  margin-right: 50px;
+}
+
+.team-member-image-1.scrolled,
+.team-member-image-2.scrolled,
+.team-member-image-3.scrolled {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-member-image-1:hover,
+.team-member-image-2:hover,
+.team-member-image-3:hover {
+  transform: scale(1.03);
+}
+
+.team-member-name-1,
+.team-member-name-3 {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  top: -50%;
+  color: rgb(73, 35, 16);
+  z-index: 1;
+}
+
+.team-member-name-2 {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: bold;
+  top: -50%;
+  color: #FFF8F0;
+  z-index: 1;
+}
+
+.team-member-role-2 {
+  font-size: 0.9rem;
+  color: #FFF8F0;
+  top: -60%;
+  position: relative;
+  z-index: 1;
+}
+
+.team-member-role-1,
+.team-member-role-3 {
+  font-size: 0.9rem;
+  color: rgb(73, 35, 16);
+  top: -60%;
+  position: relative;
+  z-index: 1;
+}
+
+.team-member-description-1 {
+  font-size: 1rem;
+  background-color: #FFF8F0;
+  text-align: left;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  margin-top: 60px;
+  margin-right: 50px;
+}
+
+.team-member-description-2 {
+  font-size: 1rem;
+  background-color: #556B2F;
+  text-align: right;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  margin-top: 60px;
+  margin-left: 50px;
+}
+
+.team-member-description-3 {
+  font-size: 1rem;
+  background-color: #FFF8F0;
+  text-align: left;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  margin-top: 60px;
+  margin-right: 50px;
 }

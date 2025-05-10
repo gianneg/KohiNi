@@ -50,6 +50,11 @@
     max-width: 260px;
 }
 
+.drink-description {
+    max-width: 360px;
+    font-family: 'Poppins';
+}
+
 .tags-list {
     display: flex;
     flex-direction: row;
@@ -67,9 +72,72 @@
     padding: 0px 10px;
 }
 
+.lemon-tag{
+    list-style-type: none;
+    background-color: #ffef5d;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+  }
+  
 .discover-tag {
     list-style-type: none;
     background-color: #967259;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+}
+
+.strawberry-tag {
+    list-style-type: none;
+    background-color: #91261a;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+}
+
+.apple-tag {
+    list-style-type: none;
+    background-color: #5d0000;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+}
+
+.mocha-tag {
+    list-style-type: none;
+    background-color: #42270d;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+}
+
+.dairy-tag {
+    list-style-type: none;
+    background-color: #060056;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+}
+
+.trending-tag {
+    list-style-type: none;
+    background-color: #3e4f21;
+    color: #ffffff;
+    font-family: 'Poppins';
+    border-radius: 90px;
+    padding: 0px 10px;
+}
+
+.turmeric-tag {
+    list-style-type: none;
+    background-color: #7e5e00;
     color: #ffffff;
     font-family: 'Poppins';
     border-radius: 90px;
@@ -88,6 +156,7 @@
     top: 10px;
     border-top-right-radius: 90px;
     border-bottom-right-radius: 90px;
+    text-align: center;
 }
 
 .ingredients-section {
@@ -102,6 +171,10 @@
     font-weight: 700;
     color: white;
     padding-left: 60px;
+}
+
+.ingredients-btn:hover, .instructions-btn:hover {
+    transform: scale(1.1);
 }
 
 .ingredients-list {
@@ -136,16 +209,19 @@
 
 .instructions-and-fun {
     display: flex;
-    gap: 80px;
-    padding-bottom: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0 0px 20px 20px;
+    box-sizing: border-box;
 }
 
 .instructions-list {
-    padding-left: 100px;
     font-family: 'Poppins';
     font-weight: 300;
     color: #492310;
     width: 600px;
+    padding-left: 60px;
 }
 
 .instructions-list-item {
@@ -161,6 +237,7 @@
     padding: 20px;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
+    margin-left: auto;
 }
 
 .fun-fact h4 {
