@@ -1,7 +1,4 @@
 <template>
-    <div class="FAQBanner">
-        FREQUENTLY ASKED QUESTIONS.
-    </div>
     <div class="FAQBase">
         <h3 id="FAQTitle">Most Popular Questions</h3>
         <div class="FAQContainer" >  
