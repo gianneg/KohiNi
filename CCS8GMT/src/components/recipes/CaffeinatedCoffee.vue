@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
           <p class="caffeine-tagline">“Brew it your way — Explore delicious coffee recipes from around the world.”</p>
       </div>
       <div class="video-section">
-          <img src="/img/banners/CoffeeBanner.png" alt="Banner" class="banner-image"/>
+          <img src="/img/banners/NonCoffee.png" alt="Banner" class="banner-image"/>
       </div>
       <div class="child-container">
         <div class="coffee-container swiper">
@@ -115,12 +115,16 @@ onBeforeUnmount(() => {
 @import './CoffeeCarouselMobile.css';
 
 
-.banner-image {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 20px;
+.banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.video-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 </style>
