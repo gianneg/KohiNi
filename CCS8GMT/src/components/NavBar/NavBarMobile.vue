@@ -13,6 +13,7 @@
         <button class="close-btn" @click="toggleMenu">✖</button>
   
         <div class="nav-links">
+          <span @click="navigateTo('/')">Home</span>
           <span @click="navigateTo('/about')">About Us</span>
           <span @click="navigateTo('/contact')">Contact Us</span>
           <span @click="navigateTo('/faq')">Frequently Asked Questions</span>
