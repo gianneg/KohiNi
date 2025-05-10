@@ -116,7 +116,7 @@ onBeforeUnmount(() => {
 
 
 .banner-video {
-    width: 100%;
+    width: 60%;
     height: 100%;
     object-fit: cover;
     display: block;
