@@ -163,7 +163,7 @@
     padding-bottom: 20px;
   }
 
-.fade-enter-active, .fade-leave-active {
+  .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
   }
   .fade-enter-from {
