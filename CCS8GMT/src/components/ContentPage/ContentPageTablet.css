@@ -11,6 +11,11 @@
         margin: 0px;
     }
 
+    .drink-description {
+        max-width: 220px;
+        font-family: 'Poppins';
+    }
+
     .drink-name-section {
         padding: 20px 0px;
         background-color: #ECE0D1;
@@ -46,6 +51,10 @@
         font-size: 15px;
     }
 
+    .ingredients-btn:hover, .instructions-btn:hover {
+        transform: scale(1.1);
+    }
+
     .tags-list {
         display: flex;
         flex-direction: row;
@@ -62,7 +71,7 @@
         border-radius: 90px;
         padding: 0px 10px;
     }
-
+    
     .discover-tag {
         list-style-type: none;
         background-color: #967259;
@@ -71,6 +80,69 @@
         border-radius: 90px;
         padding: 0px 10px;
     }
+    
+    .strawberry-tag {
+        list-style-type: none;
+        background-color: #91261a;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .apple-tag {
+        list-style-type: none;
+        background-color: #5d0000;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .mocha-tag {
+        list-style-type: none;
+        background-color: #42270d;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .dairy-tag {
+        list-style-type: none;
+        background-color: #060056;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .trending-tag {
+        list-style-type: none;
+        background-color: #3e4f21;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+    
+    .turmeric-tag {
+        list-style-type: none;
+        background-color: #7e5e00;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+    }
+
+    .lemon-tag{
+        list-style-type: none;
+        background-color: #ffef5d;
+        color: #ffffff;
+        font-family: 'Poppins';
+        border-radius: 90px;
+        padding: 0px 10px;
+      }
 
     .allergy {
         width: 250px;

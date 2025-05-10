@@ -17,8 +17,8 @@
           <span @click="navigateTo('/contact')">Contact Us</span>
           <span @click="navigateTo('/faq')">Frequently Asked Questions</span>
           <span @click="navigateTo('/site-map')">Site Map</span>
-          <span @click="navigateTo('/recipes/CaffeinatedCoffee')">Caffeine Recipes</span>
-          <span @click="navigateTo('/recipes/NonCaffeinatedDrinks')">Non-Caffeine Recipes</span>
+          <span @click="navigateTo('/CaffeinatedCoffee')">Caffeine Recipes</span>
+          <span @click="navigateTo('/NonCaffeinatedDrinks')">Non-Caffeine Recipes</span>
         </div>
       </div>
     </nav>
@@ -46,10 +46,5 @@
   
   <style scoped>
   @import "./NavBarMobile.css";
-
-  .logo-img {
-  max-height: 40px;
-  width: auto;
-}
   </style>
   

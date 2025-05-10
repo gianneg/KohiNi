@@ -90,7 +90,7 @@ onBeforeUnmount(() => {
                         <li 
                           v-for="(tag, index) in drink.drink_tag" 
                           :key="index"
-                          :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Mocha' ? 'mocha-tag' : tags"
+                          :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Mocha' ? 'mocha-tag' : tag === 'Trending' ? 'trending-tag' : tag === 'Dairy' ? 'dairy-tag' : tags"
                         >
                           {{ tag }}
                         </li>

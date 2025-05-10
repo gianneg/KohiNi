@@ -1,6 +1,7 @@
 .mobile-left {
-    position: fixed;
+    position: relative;
     display: flex;
+    align-items: center;
     height: 40px;
     background-color: #ECE0D1;
     width: 100%;
@@ -10,11 +11,23 @@
 .hamburger {
     font-size: 30px;
     margin-left: 20px;
+    z-index: 2;
 }
 
 .logo {
     position: fixed;
     left: 43%;
+}
+
+.logo-img {
+  /* max-height: 40px;
+  width: auto;
+  align-self: center; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 30px;
+  z-index: 1;
 }
 
 .mobile-menu {
