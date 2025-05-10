@@ -1,7 +1,5 @@
 <template>
-    <div class="video-section">
-        <img src="/img/banners/HomeBanner.png" alt="Banner" class="banner-image"/>
-    </div>
+    <video class="banner-video" src="/videos/HomePage.mp4" autoplay loop muted controls></video>
 
     <div class="student-favorites">
         <h2 id="favorites-title">Student Favorites!</h2>
@@ -111,13 +109,18 @@ export default {
 
     
 
-    .banner-image {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  padding-bottom: 20px;
+.banner-video {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
+.video-section {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 
 </style>
