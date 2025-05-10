@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
           <p class="caffeine-tagline">“Brew it your way — Explore delicious coffee recipes from around the world.”</p>
       </div>
       <div class="video-section">
-          <img src="/img/banners/NonCoffee.png" alt="Banner" class="banner-image"/>
+          <img src="/videos/NonCoffee.mp4" alt="Banner" class="banner-image"/>
       </div>
       <div class="child-container">
         <div class="coffee-container swiper">
