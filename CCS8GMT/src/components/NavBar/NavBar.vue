@@ -21,14 +21,7 @@ export default {
   },
   methods: {
     handleResize() {
-      if (this.isMobile && (outerWidth <= 768) && (outerWidth > 480)) 
-      {
-        window.outerWidth <= 768;
-      }
-      else if (this.isMobile && (outerWidth <= 480)) 
-      {
-        window.outerWidth <= 480;
-      }
+      this.isMobile = window.outerWidth <= 768;
     },
   },
   mounted() {

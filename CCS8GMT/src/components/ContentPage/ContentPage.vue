@@ -4,7 +4,7 @@
       <transition name="fade" mode="out-in">
         <div :key="drinkData ? drinkData.drink_name : 'loading'">
           <div v-if="drinkData" class="main-content">
-              <h1 class="content-name">{{ drinkData.content_name }}</h1>
+            <img src="/img/banners/RecipeBanner.png" alt="Banner" class="banner-image"/>
 
 
             <!-- Drink Name and Image -->
@@ -153,6 +153,15 @@
 @import "./ContentPageTablet.css"; /*1024px*/
 @import "./ContentPageLargeMobile.css"; /*768px*/
 @import "./ContentPageSmallMobile.css"; /*480px*/
+
+  .banner-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
 
 .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
