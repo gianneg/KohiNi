@@ -19,7 +19,7 @@
               >
                 Non-Caffeinated Drinks
               </router-link>
-              / <p>{drinkData.drink_name}</p>
+              / <p>{{drinkData.drink_name}}</p>
             </span>
             </div>
             <!-- Drink Name and Image -->
