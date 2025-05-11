@@ -7,7 +7,7 @@
             <!-- Drink Name and Image -->
             <div class="drink-info">
                 <div class="breadcrumbs">
-                <span>
+                <span class="breadcrumb-text">
                 <router-link
                   v-if="drinkData.category === 'Coffee'"
                   to="/CaffeinatedCoffee"
@@ -179,7 +179,7 @@
   }
 
   .breadcrumbs {
-    margin-left: 1rem;
+    padding-left: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -197,6 +197,35 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.breadcrumbs a {
+  position: relative;
+  color: #3e4f21;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #3e4f21;
+  transition: width 0.3s ease;
+  color: white;
+}
+
+.breadcrumbs a:hover {
+  color: white;
+}
+
+.breadcrumbs a:hover::after {
+  width: 100%;
+}
+
+
   
 .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
