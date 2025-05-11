@@ -178,6 +178,13 @@
     padding-bottom: 20px;
   }
 
+  .breadcrumbs {
+    word-wrap: break-word;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  }
+  
 .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
   }
