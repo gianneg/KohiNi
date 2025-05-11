@@ -4,7 +4,9 @@
       <transition name="fade" mode="out-in">
         <div :key="drinkData ? drinkData.drink_name : 'loading'">
           <div v-if="drinkData" class="main-content">
-            <div class="breadcrumbs">
+            <!-- Drink Name and Image -->
+            <div class="drink-info">
+              <div class="breadcrumbs">
               <span>
               <router-link
                 v-if="drinkData.category === 'Coffee'"
@@ -22,8 +24,6 @@
               / {{drinkData.drink_name}}
             </span>
             </div>
-            <!-- Drink Name and Image -->
-            <div class="drink-info">
               <div class="drink-name-section">
                 <div class="name-left">
                 <h2 class="drink-name">{{ drinkData.drink_name }}</h2>
