@@ -21,7 +21,7 @@
                 >
                   Non-Caffeinated Drinks
                 </router-link>
-                / {{drinkData.drink_name}}
+                > {{drinkData.drink_name}}
               </span>
               </div>
               <div class="drink-name-section">
@@ -179,11 +179,12 @@
   }
 
   .breadcrumbs {
-    word-wrap: break-word;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  background-color: rgb(236, 224, 209);
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: rgb(236, 224, 209);
   }
 
   .breadcrumb-text {
@@ -191,7 +192,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.25rem;
-  color: #444;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
   
 .fade-enter-active, .fade-leave-active {
