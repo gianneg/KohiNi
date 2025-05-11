@@ -4,7 +4,24 @@
       <transition name="fade" mode="out-in">
         <div :key="drinkData ? drinkData.drink_name : 'loading'">
           <div v-if="drinkData" class="main-content">
+            <div class="breadcrumbs">
+              <span>
+              <router-link
+                v-if="drinkData.category === 'Coffee'"
+                to="/CaffeinatedCoffee"
+              >
+                Caffeinated Drinks
+              </router-link>
 
+              <router-link
+                v-else
+                to="/NonCaffeinatedDrinks"
+              >
+                Non-Caffeinated Drinks
+              </router-link>
+              / <p>{drinkData.drink_name}</p>
+            </span>
+            </div>
             <!-- Drink Name and Image -->
             <div class="drink-info">
               <div class="drink-name-section">
