@@ -4,8 +4,6 @@
       <transition name="fade" mode="out-in">
         <div :key="drinkData ? drinkData.drink_name : 'loading'">
           <div v-if="drinkData" class="main-content">
-            <img src="/img/banners/RecipeBanner.png" alt="Banner" class="banner-image"/>
-
 
             <!-- Drink Name and Image -->
             <div class="drink-info">

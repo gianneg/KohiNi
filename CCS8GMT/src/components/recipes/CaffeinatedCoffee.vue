@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
           <p class="caffeine-tagline">“Brew it your way — Explore delicious coffee recipes from around the world.”</p>
       </div>
       <div class="video-section">
-          <img src="/videos/CoffeeDrinks.mp4" alt="Banner" class="banner-image"/>
+        <video class="banner-video" src="/videos/CoffeeDrinks.mp4" autoplay loop muted controls></video>
       </div>
       <div class="child-container">
         <div class="coffee-container swiper">
