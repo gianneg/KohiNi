@@ -6,24 +6,24 @@
           <div v-if="drinkData" class="main-content">
             <!-- Drink Name and Image -->
             <div class="drink-info">
-              <div class="breadcrumbs">
-              <span>
-              <router-link
-                v-if="drinkData.category === 'Coffee'"
-                to="/CaffeinatedCoffee"
-              >
-                Caffeinated Drinks
-              </router-link>
+                <div class="breadcrumbs">
+                <span>
+                <router-link
+                  v-if="drinkData.category === 'Coffee'"
+                  to="/CaffeinatedCoffee"
+                >
+                  Caffeinated Drinks
+                </router-link>
 
-              <router-link
-                v-else
-                to="/NonCaffeinatedDrinks"
-              >
-                Non-Caffeinated Drinks
-              </router-link>
-              / {{drinkData.drink_name}}
-            </span>
-            </div>
+                <router-link
+                  v-else
+                  to="/NonCaffeinatedDrinks"
+                >
+                  Non-Caffeinated Drinks
+                </router-link>
+                / {{drinkData.drink_name}}
+              </span>
+              </div>
               <div class="drink-name-section">
                 <div class="name-left">
                 <h2 class="drink-name">{{ drinkData.drink_name }}</h2>
@@ -183,7 +183,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  background-color: rgb(236, 224, 209);
   }
+
+  .breadcrumb-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  color: #444;
+}
   
 .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
