@@ -8,6 +8,10 @@
             <div class="drink-info">
                 <div class="breadcrumbs">
                 <span class="breadcrumb-text">
+                <router-link to="/">
+                  Home
+                </router-link>
+                &nbsp;>&nbsp;
                 <router-link
                   v-if="drinkData.category === 'Coffee'"
                   to="/CaffeinatedCoffee"
@@ -21,7 +25,7 @@
                 >
                   Non-Caffeinated Drinks
                 </router-link>
-                > {{drinkData.drink_name}}
+                &nbsp;>&nbsp;{{drinkData.drink_name}}
               </span>
               </div>
               <div class="drink-name-section">

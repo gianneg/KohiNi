@@ -63,6 +63,14 @@ onBeforeUnmount(() => {
 <template>
   <div class="parent-container">
       <div class="title-section">
+        <div class="breadcrumbs">
+        <span class="breadcrumb-text">
+        <router-link to="/">
+          Home
+        </router-link>
+        &nbsp;>&nbsp;Non-Caffeinated Drinks
+      </span>
+      </div>
           <h2>CAFFEINATED DRINKS</h2>
           <p class="caffeine-tagline">“Brew it your way — Explore delicious coffee recipes from around the world.”</p>
       </div>
@@ -125,5 +133,53 @@ onBeforeUnmount(() => {
 .video-section {
     width: 100%;
     overflow: hidden;
+}
+
+
+.breadcrumbs {
+    padding-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: rgb(236, 224, 209);
+  }
+
+  .breadcrumb-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumbs a {
+  position: relative;
+  color: #3e4f21;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #3e4f21;
+  transition: width 0.3s ease;
+  color: white;
+}
+
+.breadcrumbs a:hover {
+  color: white;
+}
+
+.breadcrumbs a:hover::after {
+  width: 100%;
 }
 </style>

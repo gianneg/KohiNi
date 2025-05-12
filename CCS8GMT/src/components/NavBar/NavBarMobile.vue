@@ -17,7 +17,6 @@
           <span @click="navigateTo('/about')">About Us</span>
           <span @click="navigateTo('/contact')">Contact Us</span>
           <span @click="navigateTo('/faq')">Frequently Asked Questions</span>
-          <span @click="navigateTo('/site-map')">Site Map</span>
           <span @click="navigateTo('/CaffeinatedCoffee')">Caffeine Recipes</span>
           <span @click="navigateTo('/NonCaffeinatedDrinks')">Non-Caffeine Recipes</span>
         </div>
