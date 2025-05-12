@@ -68,7 +68,7 @@ onBeforeUnmount(() => {
         <router-link to="/">
           Home
         </router-link>
-        &nbsp;>&nbsp;Non-Caffeinated Drinks
+        &nbsp;>&nbsp;Caffeinated Drinks
       </span>
       </div>
           <h2>CAFFEINATED DRINKS</h2>
