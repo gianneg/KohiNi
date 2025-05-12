@@ -9,7 +9,6 @@ const router = useRouter();
 
 let swiperInstance = null;
 
-//Caffeine Drinks Data
 const caffeineDrinks = ref([]);
 
 const fetchCaffeinatedDrinks = async () => {
