@@ -54,7 +54,7 @@
                             </p>
                             <p class="recipe-non-caffein">
                                 <router-link to="/NonCaffeinatedDrinks" class="text-reset">Non-Caffeinated Drinks</router-link>
-              </p>
+                            </p>
                         </div>
 
                         <div class="col col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
@@ -66,8 +66,11 @@
                                 <router-link to="/contact" class="text-reset">Contact Us</router-link>
                             </p>
                             <p class="useful-links">
-                                <router-link to="/faq" class="text-reset">Frequently Asked Questions</router-link>
-              </p>
+                                <router-link to="/FAQ" class="text-reset">Frequently Asked Questions</router-link>
+                            </p>
+                            <p class="useful-links">
+                                <router-link to="/Site-Map" class="text-reset">Site-Map</router-link>
+                            </p>
                         </div>
 
                         <div class="col col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">

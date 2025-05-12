@@ -4,11 +4,30 @@
       <transition name="fade" mode="out-in">
         <div :key="drinkData ? drinkData.drink_name : 'loading'">
           <div v-if="drinkData" class="main-content">
-              <h1 class="content-name">{{ drinkData.content_name }}</h1>
-
-
             <!-- Drink Name and Image -->
             <div class="drink-info">
+                <div class="breadcrumbs">
+                <span class="breadcrumb-text">
+                <router-link to="/">
+                  Home
+                </router-link>
+                &nbsp;>&nbsp;
+                <router-link
+                  v-if="drinkData.category === 'Coffee'"
+                  to="/CaffeinatedCoffee"
+                >
+                  Caffeinated Drinks
+                </router-link>
+
+                <router-link
+                  v-else
+                  to="/NonCaffeinatedDrinks"
+                >
+                  Non-Caffeinated Drinks
+                </router-link>
+                &nbsp;>&nbsp;{{drinkData.drink_name}}
+              </span>
+              </div>
               <div class="drink-name-section">
                 <div class="name-left">
                 <h2 class="drink-name">{{ drinkData.drink_name }}</h2>
@@ -154,6 +173,64 @@
 @import "./ContentPageLargeMobile.css"; /*768px*/
 @import "./ContentPageSmallMobile.css"; /*480px*/
 
+  .banner-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+
+  .breadcrumbs {
+    padding-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: rgb(236, 224, 209);
+  }
+
+  .breadcrumb-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.breadcrumbs a {
+  position: relative;
+  color: #3e4f21;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #3e4f21;
+  transition: width 0.3s ease;
+  color: white;
+}
+
+.breadcrumbs a:hover {
+  color: white;
+}
+
+.breadcrumbs a:hover::after {
+  width: 100%;
+}
+
+
+  
 .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
   }

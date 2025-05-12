@@ -1,7 +1,5 @@
 <template>
-    <div class="video-section">
-        This is where the video should be.
-    </div>
+    <video class="banner-video" src="/videos/HomePage.mp4" autoplay loop muted controls></video>
 
     <div class="student-favorites">
         <h2 id="favorites-title">Student Favorites!</h2>
@@ -108,4 +106,20 @@ export default {
     @import "./HomepageTablet.css"; /*1024px*/
     @import "./HomepageLargeMobile.css"; /*768px*/
     @import "./HomepageSmallMobile.css"; /*480px*/
+
+    
+
+.banner-video {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.video-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+
 </style>
