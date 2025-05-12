@@ -34,7 +34,7 @@
     
     .FAQQuestion{
         flex-basis: 100%;
-        margin-bottom: 5%;
+        margin-bottom: 2%;
         position: relative;
         background-color: #ECE0D1;
         border-radius:25px;
@@ -52,6 +52,7 @@
         padding-bottom: .5%;
         padding-top:.5% ;
         padding-right: 5%;
+        height: 180px;
     }
     
     .FAQbtn {
