@@ -13,7 +13,7 @@
           @click.prevent="goToDrink(drink.id)"
           class="carousel-item"
         >
-          <img :src="drink.image_url" alt="Drink" />
+          <img :src="drink.image_url" alt="Drink Image" />
         </a>
       </div>
 
