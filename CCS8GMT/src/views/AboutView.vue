@@ -17,7 +17,7 @@
       <h3 class="team-header">Meet Our Team</h3>
       <div class="team-member-container">
         <div class="team-member box-1">
-          <img src="/img/Members/CCS8_Tapic.jpg" alt="Team Member" class="team-member-image-1" />
+          <img src="/img/Members/CCS8_Tapic.jpg" alt="Alcris Tapic" class="team-member-image-1" />
           <div class="team-member-description-1">
             <h4 class="team-member-name-1">Alcris Tapic</h4>
             <p class="team-member-role-1">Developer/Designer</p>
@@ -73,10 +73,10 @@
               </a>
             </div>
           </div>
-          <img src="/img/Members/CCS8_Gianne.jpg" alt="Team Member" class="team-member-image-2" />
+          <img src="/img/Members/CCS8_Gianne.jpg" alt="Gianne Gaudan" class="team-member-image-2" />
         </div>
         <div class="team-member box-3">
-          <img src="/img/Members/CCS8_John.jpg" alt="Team Member" class="team-member-image-3" />
+          <img src="/img/Members/CCS8_John.jpg" alt="John Magbanua" class="team-member-image-3" />
           <div class="team-member-description-3">
             <h4 class="team-member-name-3">John Magbanua</h4>
             <p class="team-member-role-3">Developer/Designer</p>

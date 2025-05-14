@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
                 >
                 <div class="card-link" @click="$router.push(`/content/${drink.id}`)">
                     <h3 class="drink-name">{{ drink.drink_main_tag }}</h3>
-                    <img :src="drink.image" alt="Card Image" class="card-image" />
+                    <img :src="drink.image" alt="Drink Card Image" class="card-image" />
                     <div class="image-holder"></div>
                     <div class="drink-info">
                     <h2 class="card-title">{{ drink.title }}</h2>
