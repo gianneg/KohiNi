@@ -59,6 +59,9 @@
   </template>
   
   <script>
+
+    import { db } from '../database/firebase';
+    import { collection, addDoc } from 'firebase/firestore';
   export default {
   data() {
     return {
@@ -90,22 +93,34 @@
       return Object.keys(this.errors).length === 0;
     },
 
-    submitForm() {
+    async submitForm() {
       if (this.validateForm()) {
-            this.successMessage = 'Your message has been sent!';
-        this.form = {
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          message: '',
-        };
+        try {
+          await addDoc(collection(db, 'Message'), {
+            first_name: this.form.firstName,
+            last_name: this.form.lastName,
+            email: this.form.email,
+            number: this.form.phone,
+            message: this.form.message,
+          });
 
-       this.errors = {};
+          this.successMessage = 'Your message has been sent!';
+          this.form = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            message: '',
+          };
+          this.errors = {};
 
           setTimeout(() => {
-              this.successMessage = '';
-        }, 4000);
+            this.successMessage = '';
+          }, 4000);
+        } catch (error) {
+          console.error("Error submitting message: ", error);
+          alert("Something went wrong. Please try again later.");
+        }
       }
     },
   },
