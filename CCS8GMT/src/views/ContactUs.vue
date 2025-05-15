@@ -41,11 +41,11 @@
           <h3>Contact Information</h3>
           <div class="info-item">
             <span class="icon phone-icon"></span>
-            <span>+1012 3456 789</span>
+            <span>+01 234 567 89</span>
           </div>
           <div class="info-item">
             <span class="icon email-icon"></span>
-            <span>demo@gmail.com</span>
+            <span>contactus@kohini.com</span>
           </div>
         </div>
       </div>
