@@ -40,6 +40,7 @@
             </div>
             <button type="submit" class="send-button">Send Message</button>
           </form>
+            <p v-if="successMessage" class="success">{{ successMessage }}</p>
         </div>
   
         <div class="contact-info">
@@ -69,6 +70,7 @@
         message: '',
       },
       errors: {},
+            successMessage: '',
     };
   },
   methods: {
@@ -90,7 +92,7 @@
 
     submitForm() {
       if (this.validateForm()) {
-        alert('Message sent!');
+            this.successMessage = 'Your message has been sent!';
         this.form = {
           firstName: '',
           lastName: '',
@@ -100,6 +102,10 @@
         };
 
        this.errors = {};
+
+          setTimeout(() => {
+              this.successMessage = '';
+        }, 4000);
       }
     },
   },
@@ -117,6 +123,14 @@
   display: block;
   font-family: 'Poppins';
 }
+
+      .success {
+  color: green;
+  font-size: 0.95em;
+  margin-top: 10px;
+  font-family: 'Poppins';
+}
+
 
   </style>
   
