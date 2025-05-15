@@ -60,7 +60,7 @@
   
   <script>
 
-    import { db } from '../database/firebase';
+    import { db } from "@/lib/firebase";
     import { collection, addDoc } from 'firebase/firestore';
   export default {
   data() {
