@@ -91,7 +91,7 @@
     submitForm() {
       if (this.validateForm()) {
         alert('Message sent!');
-        this..form = {
+        this.form = {
           firstName: '',
           lastName: '',
           email: '',
