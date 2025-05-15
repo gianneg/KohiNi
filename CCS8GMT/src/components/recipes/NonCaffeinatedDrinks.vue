@@ -155,8 +155,9 @@ onBeforeUnmount(() => {
     flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem;
-    background-color: rgb(236, 224, 209);
-  }
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;  
+}
 
   .breadcrumb-text {
   display: flex;
