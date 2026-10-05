@@ -116,10 +116,10 @@
                 @keydown.enter="$router.push(`/content/${item.id}`)"
             >
                 <span class="card-steam" aria-hidden="true"><i></i><i></i><i></i></span>
-                <div class="card-photo">
+                <div class="card-photo-wrap"><div class="card-photo">
                     <img v-if="item.image" :src="item.image" :alt="item.title" loading="lazy" />
                     <span v-else class="card-photo-fallback">&#9749;</span>
-                </div>
+                </div></div>
                 <h5 class="card-title">{{ item.title }}</h5>
                 <p class="card-caption">View recipe <span>&rarr;</span></p>
             </article>
