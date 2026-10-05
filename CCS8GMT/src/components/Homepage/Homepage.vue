@@ -7,7 +7,9 @@
 
         <div class="hero-copy">
             <p class="eyebrow">Student-made coffee recipes</p>
-            <h1 class="hero-title">Brew it <em>your</em> way.</h1>
+            <h1 class="hero-title">Brew it
+                <Transition name="swap" mode="out-in"><em :key="word">{{ word }}</em></Transition>
+                way.</h1>
             <p class="hero-sub">
                 From velvety lattes to cozy caffeine-free sips, learn every drink step by step
                 and even have the recipe read out loud while you brew.
@@ -15,6 +17,7 @@
             <div class="hero-actions">
                 <a class="btn btn-primary" @click="navigateTo('/CaffeinatedCoffee')">Explore coffee</a>
                 <a class="btn btn-ghost" @click="navigateTo('/NonCaffeinatedDrinks')">Caffeine-free</a>
+                <button class="btn btn-fun" :disabled="rolling" @click="surpriseMe">{{ rolling ? 'Rolling the beans...' : 'Surprise me!' }}</button>
             </div>
             <ul class="hero-chips">
                 <li>Hot &amp; iced</li>
@@ -23,7 +26,10 @@
             </ul>
         </div>
 
-        <div class="hero-cup" aria-hidden="true">
+        <div class="hero-cup" :class="{ shaking: rolling, sipping: sip }" role="button" tabindex="0"
+             aria-label="Splash the cup" @click="splash" @keydown.enter="splash">
+            <span class="burst-bean" v-for="b in burst" :key="b.id" :style="b.style"></span>
+            <Transition name="pop"><p class="fact-bubble" v-if="fact">{{ fact }}</p></Transition>
             <svg viewBox="0 0 400 420" class="cup-svg" role="img">
                 <defs>
                     <clipPath id="cup-inside">
@@ -126,6 +132,30 @@
         </div>
     </section>
 
+    <!-- Mood picker -->
+    <section class="mood" v-reveal>
+        <p class="eyebrow">Can't decide?</p>
+        <h2 class="mood-title">What's your brew mood?</h2>
+        <div class="mood-chips">
+            <button
+                v-for="m in moods"
+                :key="m.label"
+                class="mood-chip"
+                :class="{ active: mood && mood.label === m.label }"
+                @click="pickMood(m)"
+            >
+                <span class="mood-emoji">{{ m.emoji }}</span>{{ m.label }}
+            </button>
+        </div>
+        <Transition name="pop" mode="out-in">
+            <div class="mood-result" v-if="pick" :key="pick.id">
+                <p class="mood-line">{{ mood.line }}</p>
+                <h3 class="mood-drink">{{ pick.drink_name }}</h3>
+                <a class="btn btn-primary" @click="navigateTo(`/content/${pick.id}`)">Let's brew it</a>
+            </div>
+        </Transition>
+    </section>
+
     <!-- Categories -->
     <section class="recipes">
         <div class="section-head" v-reveal>
@@ -158,7 +188,7 @@
 
 <script>
 import { useRouter } from "vue-router";
-import { onMounted, ref } from "vue";
+import { onMounted, onBeforeUnmount, ref } from "vue";
 import { db } from "../../lib/firebase";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import DrinkCarousel from "../DrinkCarousel/DrinkCarousel.vue";
@@ -235,11 +265,125 @@ export default {
             router.push(route);
         };
 
+        // ---- Fun stuff ----
+        const words = ["your", "sleepy", "sweet", "bold", "cozy", "iced"];
+        const word = ref(words[0]);
+        let wordTimer;
+
+        const facts = [
+            "Espresso has less caffeine per serving than a big mug of drip coffee!",
+            "Coffee beans are actually seeds from a cherry-like fruit.",
+            "Finland drinks the most coffee per person in the world.",
+            "Iced coffee got popular way before it got trendy. Brew on!",
+            "A latte is mostly milk, so you can go heavy on the foam.",
+            "Beans are roasted at about 200 degrees Celsius. Toasty!",
+        ];
+        const fact = ref("");
+        const burst = ref([]);
+        const sip = ref(false);
+        const rolling = ref(false);
+        let burstId = 0;
+        let factTimer;
+
+        const splash = () => {
+            const fresh = Array.from({ length: 14 }, () => {
+                const angle = Math.random() * Math.PI * 2;
+                const dist = 90 + Math.random() * 130;
+                return {
+                    id: ++burstId,
+                    style: {
+                        "--tx": `${Math.cos(angle) * dist}px`,
+                        "--ty": `${Math.sin(angle) * dist - 60}px`,
+                        "--rot": `${Math.random() * 540 - 270}deg`,
+                        "--s": `${12 + Math.random() * 12}px`,
+                    },
+                };
+            });
+            burst.value = [...burst.value, ...fresh];
+            setTimeout(() => {
+                burst.value = burst.value.filter((b) => !fresh.includes(b));
+            }, 1200);
+
+            sip.value = true;
+            setTimeout(() => (sip.value = false), 600);
+
+            fact.value = facts[Math.floor(Math.random() * facts.length)];
+            clearTimeout(factTimer);
+            factTimer = setTimeout(() => (fact.value = ""), 3800);
+        };
+
+        // all drinks, fetched lazily the first time someone plays
+        let allDrinks = [];
+        const loadAllDrinks = async () => {
+            if (allDrinks.length) return allDrinks;
+            const snap = await getDocs(collection(db, "Drinks"));
+            allDrinks = snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+            return allDrinks;
+        };
+
+        const surpriseMe = async () => {
+            if (rolling.value) return;
+            rolling.value = true;
+            splash();
+            try {
+                const drinks = await loadAllDrinks();
+                await new Promise((r) => setTimeout(r, 900));
+                if (drinks.length) {
+                    const d = drinks[Math.floor(Math.random() * drinks.length)];
+                    router.push(`/content/${d.id}`);
+                }
+            } catch (e) {
+                console.error("Surprise failed:", e);
+            } finally {
+                rolling.value = false;
+            }
+        };
+
+        const moods = [
+            { emoji: "\u{1F634}", label: "Sleepy", line: "You need a wake-up call:", keys: ["espresso", "vietnamese", "macchiato"] },
+            { emoji: "\u{1F624}", label: "Stressed", line: "Something rich and comforting:", keys: ["chocolate", "mocha", "cinnamon"] },
+            { emoji: "\u{1F389}", label: "Celebrating", line: "Treat yourself with this one:", keys: ["frappuccino", "spanish", "caramel"] },
+            { emoji: "\u{1F327}\u{FE0F}", label: "Cozy", line: "Wrap your hands around:", keys: ["cider", "tea", "latte"] },
+        ];
+        const mood = ref(null);
+        const pick = ref(null);
+
+        const pickMood = async (m) => {
+            mood.value = m;
+            try {
+                const drinks = await loadAllDrinks();
+                const matches = drinks.filter((d) =>
+                    m.keys.some((k) => (d.drink_name || "").toLowerCase().includes(k))
+                );
+                const pool = matches.length ? matches : drinks;
+                const choices = pool.filter((d) => !pick.value || d.id !== pick.value.id);
+                pick.value = (choices.length ? choices : pool)[Math.floor(Math.random() * (choices.length || pool.length))];
+            } catch (e) {
+                console.error("Mood pick failed:", e);
+            }
+        };
+
+        onMounted(() => {
+            if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                let i = 0;
+                wordTimer = setInterval(() => {
+                    i = (i + 1) % words.length;
+                    word.value = words[i];
+                }, 2400);
+            }
+        });
+
+        onBeforeUnmount(() => {
+            clearInterval(wordTimer);
+            clearTimeout(factTimer);
+        });
+
         const scrollToVideo = () => {
             video.value?.scrollIntoView({ behavior: "smooth", block: "start" });
         };
 
         return {
+            word, fact, burst, sip, rolling, splash, surpriseMe, moods, mood, pick, pickMood,
             favoriteItems,
             loading,
             video,
