@@ -37,7 +37,7 @@
                     <li 
                       v-for="(tag, index) in drinkData.tags" 
                       :key="index"
-                      :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Strawberry' ? 'strawberry-tag' : tag === 'Turmeric' ? 'turmeric-tag' : tag === 'Apple' ? 'apple-tag' : tag === 'Lemon' ? 'lemon-tag' : tag === 'Trending' ? 'trending-tag' : tag === 'Mocha' ? 'mocha-tag' : tag === 'Dairy' ? 'dairy-tag' : 'tags'"
+                      :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Strawberry' ? 'strawberry-tag' : tag === 'Turmeric' ? 'turmeric-tag' : tag === 'Apple' ? 'apple-tag' : tag === 'Lemon' ? 'lemon-tag' : tag === 'Trending' ? 'trending-tag' : tag === 'Mocha' ? 'mocha-tag' : tag === 'Dairy' ? 'dairy-tag' : 'tag'"
                     >
                       {{ tag }}
                     </li>
@@ -77,7 +77,7 @@
     
               <!-- Fun Fact -->
               <div class="fun-fact">
-                <h4>Fun Fact</h4>
+                <h4>&#9749; Fun Fact</h4>
                 <p>{{ drinkData.fun_fact }}</p>
               </div>
           </div>
@@ -169,28 +169,14 @@
   </script>
 
 <style scoped>
-@import "./ContentPageBase.css"; /*Desktop*/
-@import "./ContentPageTablet.css"; /*1024px*/
-@import "./ContentPageLargeMobile.css"; /*768px*/
-@import "./ContentPageSmallMobile.css"; /*480px*/
+@import "./ContentPageBase.css";
 
-  .banner-image {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    padding-bottom: 20px;
-  }
 
   .breadcrumbs {
-    padding-left: 1rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 0.25rem;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
   }
 
   .breadcrumb-text {

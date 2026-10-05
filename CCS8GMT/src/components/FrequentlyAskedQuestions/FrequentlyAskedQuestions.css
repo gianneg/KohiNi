@@ -1,84 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap');
-.FAQBanner {
-    min-height: 30vh;
+.FAQBase {
+  padding: clamp(32px, 6vw, 80px) var(--gutter) clamp(40px, 6vw, 80px);
+  text-align: center;
 }
 
-.FAQBase{
-    padding-top: 20px;
-    padding-bottom: 40px;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background-color: #FFF5E8;
-
+.faq-eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
 }
 
-#FAQTitle{
-    font-family: "Raleway", sans-serif;
-    font-size: 40px;
-    color:#556B2F;
+#FAQTitle {
+  margin: 0 0 clamp(28px, 5vw, 56px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  letter-spacing: -0.03em;
+  color: var(--espresso);
 }
 
-.FAQContainer{
-    display:flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    max-width: 80%;
-    margin: auto;
-    gap: 10%;
-    font-family: "Poppins", sans-serif;
-    font-size: 17px;
+.FAQContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1rem;
 }
 
-.FAQQuestion{
-    flex-basis: 40%;
-    margin-bottom: 2%;
-    position: relative;
-    background-color: #ECE0D1;
-    border-radius:25px;
-    text-align:left;
-    text-indent: 3%;
+.FAQQuestion {
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(73, 35, 16, 0.08);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
 }
 
-.FAQAnswer{
-    background-color: #ECE0D1;
-    color: black;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    text-indent: 0%;
-    padding-left: 5%;
-    padding-bottom: .5%;
-    padding-top:.5% ;
-    padding-right: 5%;
-    height: 135px;
+.FAQQuestion:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); }
+
+.FAQQ {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 0;
+  padding: 18px 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
 .FAQbtn {
-    border:none;
-    background-color: #556B2F;
-    border-radius: 25px;
-    cursor: pointer;
-    color: white;
-    margin-left: 3%;
-  }
-  .active{
-    background-color: #556B2F;
-    color: #fff;
-  }
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  font-size: 0.65rem;
+  color: #fff;
+  background: var(--sage);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out), background 0.3s;
+}
 
-  .BAct{
-    background-color: #fff;
-    color: #556B2F;
-  }
+.FAQQuestion.active { background: #fffaf2; }
+.FAQQuestion.active .FAQbtn { background: var(--roast); }
 
-  .playbtn {
-    border:none;
-    background-color: white;
-    border-radius: 25px;
-    cursor: pointer;
-    color: #556B2F;
-    margin-left: 3%;
-  }
-  
+.FAQAnswer {
+  padding: 0 20px 20px;
+  line-height: 1.7;
+  color: var(--mocha);
+  animation: answer-in 0.45s var(--ease-out) both;
+}
+
+.FAQAnswer p { margin: 0; }
+
+@keyframes answer-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.playbtn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 16px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--cream);
+  background: var(--roast);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s var(--ease-out);
+}
+
+.playbtn:hover { background: var(--sage); transform: scale(1.05); }
+
+@media (max-width: 760px) {
+  .FAQContainer { grid-template-columns: 1fr; }
+}

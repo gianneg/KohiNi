@@ -1,50 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap');
-
-.SMBase{
-    padding-top: 20px;
-    padding-bottom: 40px;
-    align-items: center;
-    text-align: left;
-    padding-left: 6%;
-    justify-content: center;
-    background-color: #FFF5E8;
+.SMBase {
+  padding: clamp(32px, 6vw, 80px) var(--gutter) clamp(48px, 7vw, 100px);
+  text-align: center;
 }
 
-#SMTitle{
-    font-family: "Raleway", sans-serif;
-    font-size: 50px;
-    color: #492310;
+#SMTitle {
+  margin: 0 0 clamp(28px, 5vw, 56px);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  letter-spacing: -0.03em;
+  color: var(--espresso);
 }
 
-.SMContainer{
-    display:flex;
-    flex-wrap: wrap;
-    align-items: top;
-    justify-content: left;
-    position: relative;
-    max-width: 90%;
-    margin: auto;
-    gap: 10%;
-    font-family: "Poppins", sans-serif;
-    font-size: 17px;
-    padding-bottom: 3%;
+.SMContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.SMItem{
-    text-decoration: none;
-    flex-basis: 20%;
-    position: relative;
-    text-align:left;
+.SMItem {
+  padding: 24px 26px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid rgba(73, 35, 16, 0.08);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.4s var(--ease-out), box-shadow 0.4s;
 }
 
-.SMHeader{
-    font-size: larger;
-    text-decoration: underline;
-    color: black;
-    cursor: default;
+.SMItem:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+
+.SMHeader {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--roast);
+  cursor: default;
 }
 
-.SMLink{
-    color: #556B2F;
-    cursor: pointer;
+.SMLink {
+  display: block;
+  margin: 0;
+  padding: 7px 0;
+  color: var(--sage);
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-out), color 0.3s;
 }
+
+.SMLink::before { content: "\2192\00a0"; opacity: 0; transition: opacity 0.3s; }
+.SMLink:hover { color: var(--roast); transform: translateX(6px); }
+.SMLink:hover::before { opacity: 1; }
