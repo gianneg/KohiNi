@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
                         <li 
                           v-for="(tag, index) in drink.drink_tag" 
                           :key="index"
-                          :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Mocha' ? 'mocha-tag' : tag === 'Trending' ? 'trending-tag' : tag === 'Dairy' ? 'dairy-tag' : tags"
+                          :class="tag === 'Caramel' ? 'caramel-tag' : tag === 'Discover' ? 'discover-tag' : tag === 'Mocha' ? 'mocha-tag' : tag === 'Trending' ? 'trending-tag' : tag === 'Dairy' ? 'dairy-tag' : 'tag'"
                         >
                           {{ tag }}
                         </li>
@@ -118,18 +118,20 @@ onBeforeUnmount(() => {
 
 <style scoped>
 @import './CoffeeCarousel.css';
-@import './CoffeeCarouselMobile.css';
 
 
 .banner-video {
-    width: 60%;
-    height: 100%;
+    width: min(100%, 960px);
+    max-height: 60vh;
     object-fit: cover;
     display: block;
     margin: 0 auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lift);
 }
 .video-section {
     width: 100%;
+    padding: 0 var(--gutter) clamp(28px, 5vw, 56px);
     overflow: hidden;
 }
 

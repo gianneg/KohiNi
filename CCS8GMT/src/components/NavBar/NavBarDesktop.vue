@@ -1,9 +1,9 @@
 <template>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main">
       <!-- Left Links -->
       <div class="nav-links">
         <div class="dropdown" @click.stop="toggleDropdown('about')">
-          <button class="nav-item"><div class="drpdwn">ABOUT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></div></button>
+          <button class="nav-item" :class="{ open: openDropdown === 'about' }"><div class="drpdwn">About <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></div></button>
           <div v-if="openDropdown === 'about'" class="dropdown-menu">
             <span @click="navigateTo('/about')">About Us</span>
             <span @click="navigateTo('/contact')">Contact Us</span>
@@ -12,7 +12,7 @@
         </div>
   
         <div class="dropdown" @click.stop="toggleDropdown('recipes')">
-          <button class="nav-item"><div class="drpdwn">RECIPES <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></div></button>
+          <button class="nav-item" :class="{ open: openDropdown === 'recipes' }"><div class="drpdwn">Recipes <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></div></button>
           <div v-if="openDropdown === 'recipes'" class="dropdown-menu">
             <span @click="navigateTo('/CaffeinatedCoffee')">Caffeine</span>
             <span @click="navigateTo('/NonCaffeinatedDrinks')">Non-Caffeine</span>
@@ -21,11 +21,11 @@
       </div>
   
       <!-- Logo -->
-      <div class="logo"><span class="logo-name" @click="navigateTo('/')"><img src="/img/Logo/KohiNiLogo.png" class="logo-img"></span></div>
+      <div class="logo"><span class="logo-name" @click="navigateTo('/')"><img src="/img/Logo/KohiNiLogo.png" alt="KohiNi home" class="logo-img"></span></div>
   
       <!-- Search Bar -->
       <div class="search-bar">
-      <input class="input-search"
+      <input class="input-search" aria-label="Search drinks"
         type="text"
         v-model="searchQuery"
         @input="searchDrinks"

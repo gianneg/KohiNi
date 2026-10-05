@@ -86,8 +86,9 @@
         </div>
           
           <!-- Properly adjacent v-else -->
-          <div v-else class="loading-spinner">
-            <p>Loading...</p>
+          <div v-else class="loading-spinner" role="status">
+            <div class="cup-loader" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
+            <p>Brewing your recipe...</p>
           </div>
         </div>
       </transition>
@@ -232,6 +233,62 @@
 
 
   
+.loading-spinner {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: clamp(60px, 14vw, 140px) 20px;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--mocha);
+}
+
+/* little cup that fills up while the recipe loads */
+.cup-loader {
+  position: relative;
+  width: 64px;
+  height: 52px;
+  border: 4px solid var(--roast);
+  border-radius: 6px 6px 28px 28px;
+  overflow: hidden;
+}
+
+.cup-loader::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  top: 8px;
+  width: 16px;
+  height: 22px;
+  border: 4px solid var(--roast);
+  border-radius: 0 12px 12px 0;
+}
+
+.cup-loader span {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 100%;
+  background: linear-gradient(#8a5a35, #3a1b0d);
+  transform: translateY(100%);
+  animation: cup-fill 3s ease-in-out infinite;
+}
+
+.cup-loader i {
+  position: absolute;
+  top: -30px;
+  width: 5px;
+  height: 22px;
+  border-radius: 5px;
+  background: rgba(193, 160, 136, 0.8);
+  filter: blur(2px);
+  opacity: 0;
+  animation: steam-rise 2.4s ease-in-out infinite;
+}
+
+.cup-loader i:nth-child(1) { left: 14px; }
+.cup-loader i:nth-child(2) { left: 28px; animation-delay: 0.5s; }
+.cup-loader i:nth-child(3) { left: 42px; animation-delay: 1s; }
+
 .fade-enter-active, .fade-leave-active {
     transition: all 0.2s ease;
   }
