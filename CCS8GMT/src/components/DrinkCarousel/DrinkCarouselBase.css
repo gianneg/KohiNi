@@ -1,74 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300');
-
 .carousel-container {
-  background-color: #C1A088;
-  padding-top: 1px;
-  padding-bottom: 20px;
+  position: relative;
+  padding: clamp(56px, 8vw, 100px) var(--gutter) clamp(48px, 7vw, 90px);
   text-align: center;
+  color: var(--cream);
+  background:
+    radial-gradient(700px 300px at 85% 0%, rgba(220, 165, 109, 0.25), transparent 70%),
+    linear-gradient(160deg, var(--mocha), var(--espresso));
+  overflow: hidden;
+}
+
+/* wavy edge on top, like crema */
+.carousel-container::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 200%;
+  height: 40px;
+  background: var(--cream);
+  -webkit-mask: radial-gradient(40px 20px at 40px 0, #000 98%, transparent 100%) 0 0 / 80px 100% repeat-x;
+          mask: radial-gradient(40px 20px at 40px 0, #000 98%, transparent 100%) 0 0 / 80px 100% repeat-x;
+  transform: scaleY(-1);
+  animation: crema 14s linear infinite;
+}
+
+@keyframes crema {
+  to { transform: translateX(-80px) scaleY(-1); }
 }
 
 .carousel-title {
-  font-size: 48px;
-  color: white;
-  font-family: Platypi;
-  font-weight: 300;
-  margin-bottom: 15px;
+  position: relative;
+  margin: 0 0 clamp(24px, 4vw, 44px);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.2vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.carousel-title em {
+  font-weight: 400;
+  color: var(--caramel);
 }
 
 .carousel-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFF8F0;
-  padding: 20px;
-  border-radius: 10px;
-  position: relative;
-  max-width: 700px;
+  gap: 8px;
+  max-width: 880px;
   margin: auto;
+  padding: 18px 12px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 245, 232, 0.08);
+  border: 1px solid rgba(255, 245, 232, 0.16);
+  backdrop-filter: blur(12px);
 }
 
 .carousel {
   display: flex;
-  gap: 15px;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  width: 80%;
-  padding: 10px 0;
-  white-space: nowrap;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+  padding: 14px 6px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
 }
+
+.carousel::-webkit-scrollbar { display: none; }
 
 .carousel-item {
   flex: 0 0 auto;
-  width: 100px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ccc;
-  background-color: white;
-  text-decoration: none;
-  border-radius: 20px;
+  display: block;
+  width: clamp(96px, 22vw, 130px);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+  cursor: pointer;
+  scroll-snap-align: start;
+  background: var(--cream);
+  border: 3px solid rgba(255, 245, 232, 0.9);
+  border-radius: var(--radius-md);
+  box-shadow: 0 14px 24px -14px rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), border-color 0.3s;
 }
 
-.carousel-item:hover {
-  transform: scale(1.1);
+.carousel-item:hover,
+.carousel-item:focus-visible {
+  transform: translateY(-10px) scale(1.06) rotate(-1.5deg);
+  border-color: var(--caramel);
+  box-shadow: 0 24px 30px -14px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-item img {
+  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 20px;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carousel-btn {
-  background: none;
-  border: none;
-  font-size: 24px;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  line-height: 1;
   cursor: pointer;
-  color: #5d3a2b;
-  padding: 10px;
+  color: var(--cream);
+  background: rgba(255, 245, 232, 0.12);
+  border: 1px solid rgba(255, 245, 232, 0.25);
+  border-radius: 50%;
+  transition: background 0.3s, color 0.3s, transform 0.35s var(--ease-out);
 }
 
 .carousel-btn:hover {
-  color: black;
+  color: var(--espresso);
+  background: var(--caramel);
+  transform: scale(1.1);
+}
+
+@media (max-width: 520px) {
+  .carousel-wrapper { padding: 12px 6px; gap: 2px; }
+  .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
 }

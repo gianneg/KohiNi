@@ -1,9 +1,9 @@
 <template>
   <div class="carousel-container">
-    <h2 class="carousel-title"><i>Pick any drink of your choice!</i></h2>
+    <h2 class="carousel-title">Pick any drink of <em>your</em> choice</h2>
     <div class="carousel-wrapper">
-      <button class="carousel-btn left" @click="scroll(-1)">
-        &#9664;
+      <button class="carousel-btn left" aria-label="Previous drinks" @click="scroll(-1)">
+        &#8592;
       </button>
 
       <div class="carousel" ref="carousel">
@@ -13,12 +13,12 @@
           @click.prevent="goToDrink(drink.id)"
           class="carousel-item"
         >
-          <img :src="drink.image_url" alt="Drink Image" />
+          <img :src="drink.image_url" :alt="drink.drink_name || 'Drink Image'" loading="lazy" />
         </a>
       </div>
 
-      <button class="carousel-btn right" @click="scroll(1)">
-        &#9654;
+      <button class="carousel-btn right" aria-label="Next drinks" @click="scroll(1)">
+        &#8594;
       </button>
     </div>
   </div>
@@ -50,7 +50,7 @@ export default {
       const carousel = this.$refs.carousel;
       const card = carousel.querySelector(".carousel-item");
       const cardWidth = card ? card.offsetWidth : 150;
-      carousel.scrollLeft += direction * cardWidth;
+      carousel.scrollBy({ left: direction * cardWidth * 2, behavior: "smooth" });
     },
     goToDrink(drinkId) {
       this.$router.push(`/content/${drinkId}`);
@@ -64,6 +64,4 @@ export default {
 
 <style scoped>
 @import './DrinkCarouselBase.css';
-@import './DrinkCarouselLargeMobile.css';
-@import './DrinkCarouselSmallMobile.css';
 </style>

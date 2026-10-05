@@ -110,4 +110,5 @@ export default {
 <style scoped>
 @import 'Footer.css';
 @import 'FooterMobile.css';
+@import 'FooterModern.css';
 </style>
