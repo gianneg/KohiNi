@@ -1,248 +1,237 @@
-@import url('https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Viaoda+Libre&display=swap');
+.content-page-info {
+  font-family: var(--font-body);
+  color: var(--roast);
+  background: transparent;
+}
 
 .breadcrumbs {
-    font-family: 'Poppins';
-    font-size: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
 }
 
-.content-page-info {
-    background-color: #FFF5E8;
-    position: relative;
-    top: -22px;
-}
-
-.content-name {
-    height: 100px;
-}
-
-.drink-info {
-    margin: 0px;
-}
-
+/* ---------- Hero ---------- */
 .drink-name-section {
-    padding: 20px 0px;
-    background-color: #ECE0D1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: clamp(20px, 5vw, 80px);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(16px, 4vw, 48px) var(--gutter) clamp(32px, 5vw, 64px);
 }
 
-.name-left {
-    text-align: left;
-    gap: 0px;
-}
+.name-left { text-align: left; }
 
 .drink-name {
-    font-size: 50px;
-    font-family: 'Poppins';
-    color: #492310;
-    max-width: 360px;
-    max-height: 80px;
-    text-shadow: 0px 2px  #ffffff;
-    line-height: 50px;
-}
-
-.drink-image {
-    height: 260px;
-    width: 260px;
-    border-radius: 180px;
-}
-
-.drink-tags {
-    max-width: 260px;
+  margin: 0 0 16px;
+  max-width: none;
+  max-height: none;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6.5vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--espresso);
+  text-shadow: none;
 }
 
 .drink-description {
-    max-width: 360px;
-    font-family: 'Poppins';
+  max-width: 52ch;
+  margin: 18px 0 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--mocha);
 }
+
+.drink-tags { max-width: none; }
 
 .tags-list {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    position: relative;
-    left: -40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
 }
 
-.caramel-tag {
-    list-style-type: none;
-    background-color: #DCA56D;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
+.tags-list li {
+  list-style: none;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #fff;
+  background: var(--latte);
+  border-radius: 999px;
 }
 
-.lemon-tag{
-    list-style-type: none;
-    background-color: #ffef5d;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
-  }
-  
-.discover-tag {
-    list-style-type: none;
-    background-color: #967259;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
+.tags-list .caramel-tag { background: #dca56d; }
+.tags-list .lemon-tag { background: #d8b814; }
+.tags-list .discover-tag { background: #967259; }
+.tags-list .strawberry-tag { background: #c0392b; }
+.tags-list .apple-tag { background: #8e2a2a; }
+.tags-list .mocha-tag { background: #5a3820; }
+.tags-list .dairy-tag { background: #3b4a8a; }
+.tags-list .trending-tag { background: #556b2f; }
+.tags-list .turmeric-tag { background: #b8860b; }
+
+.drink-image {
+  justify-self: center;
+  width: min(100%, 380px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid var(--cream);
+  box-shadow: var(--shadow-lift), 0 0 0 14px rgba(220, 165, 109, 0.25);
+  animation: cup-bob 6s ease-in-out infinite;
 }
 
-.strawberry-tag {
-    list-style-type: none;
-    background-color: #91261a;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
+@keyframes cup-bob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
 }
 
-.apple-tag {
-    list-style-type: none;
-    background-color: #5d0000;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
-}
-
-.mocha-tag {
-    list-style-type: none;
-    background-color: #42270d;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
-}
-
-.dairy-tag {
-    list-style-type: none;
-    background-color: #060056;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
-}
-
-.trending-tag {
-    list-style-type: none;
-    background-color: #3e4f21;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
-}
-
-.turmeric-tag {
-    list-style-type: none;
-    background-color: #7e5e00;
-    color: #ffffff;
-    font-family: 'Poppins';
-    border-radius: 90px;
-    padding: 0px 10px;
-}
-
-.allergy {
-    width: 420px;
-    font-style: italic;
-    font-family: 'Poppins';
-    font-size: 20px;
-    background-color: #3E4F21;
-    color: white;
-    padding: 20px;
-    position: relative;
-    top: 10px;
-    border-top-right-radius: 90px;
-    border-bottom-right-radius: 90px;
-    text-align: center;
-}
-
+/* ---------- Ingredients ---------- */
 .ingredients-section {
-    position: relative;
-    top: -21px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
 }
 
-.ingredients-btn {
-    background-color: transparent;
-    border: none;
-    font-family: 'Poppins';
-    font-weight: 700;
-    color: white;
-    padding-left: 60px;
+.allergy-ribbon {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--cream);
+  background: var(--sage);
+  border-radius: 999px;
 }
 
-.ingredients-btn:hover, .instructions-btn:hover {
-    transform: scale(1.1);
+.allergy-ribbon p { margin: 0; }
+
+.ingredients-btn,
+.instructions-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 22px;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  text-align: left;
+  color: var(--cream);
+  background: var(--roast);
+  border: 0;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform 0.35s var(--ease-out), background 0.3s;
 }
+
+.instructions-btn { margin-top: clamp(32px, 5vw, 56px); width: calc(100% - 2 * var(--gutter)); }
+.ingredients-btn { width: 100%; }
+
+.ingredients-btn:hover,
+.instructions-btn:hover { background: var(--espresso); transform: translateY(-2px); }
 
 .ingredients-list {
-    padding-left: 100px;
-    font-family: 'Poppins';
-    font-weight: 300;
-    color: white;
-    display: grid;
-    width: 800px;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/3)), 1fr));
-    row-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 .ingredients-list-item {
-    width: 250px;
+  height: 100%;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: #fff;
+  border: 1px solid rgba(73, 35, 16, 0.08);
+  border-left: 4px solid var(--caramel);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.35s var(--ease-out);
 }
 
-.ingredients-section {
-    background-color: rgb(150, 114, 89, .7);
-    padding-bottom: 20px;
-}
+.ingredients-list-item:hover { transform: translateX(4px); }
 
-.instructions-btn {
-    background-color: transparent;
-    border: none;
-    font-family: 'Poppins';
-    font-weight: 700;
-    color: #492310;
-    padding-left: 60px;
-    padding-top: 20px;
-}
-
+/* ---------- Instructions ---------- */
 .instructions-and-fun {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    padding: 0 0px 20px 20px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(20px, 4vw, 48px);
+  max-width: 1100px;
+  margin: 24px auto clamp(40px, 6vw, 80px);
+  padding: 0 var(--gutter);
+  align-items: start;
 }
 
 .instructions-list {
-    font-family: 'Poppins';
-    font-weight: 300;
-    color: #492310;
-    width: 600px;
-    padding-left: 60px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
 }
 
 .instructions-list-item {
-    width: 450px;
+  position: relative;
+  margin-bottom: 14px;
+  padding: 18px 20px 18px 72px;
+  line-height: 1.7;
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  counter-increment: step;
+}
+
+.instructions-list-item::before {
+  content: counter(step);
+  position: absolute;
+  left: 18px;
+  top: 16px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--cream);
+  background: var(--roast);
+  border-radius: 50%;
 }
 
 .fun-fact {
-    background-color: #492310;
-    color: white;
-    font-family: 'Poppins';
-    font-weight: 300;
-    width: 450px;
-    padding: 20px;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-    margin-left: auto;
+  position: sticky;
+  top: 100px;
+  padding: 26px;
+  background: linear-gradient(150deg, var(--caramel), #c98d52);
+  color: var(--espresso);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+  transform: rotate(1.5deg);
 }
 
 .fun-fact h4 {
-    font-style: italic;
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+}
+
+.fun-fact p { margin: 0; line-height: 1.7; }
+
+@media (max-width: 800px) {
+  .drink-name-section { grid-template-columns: 1fr; text-align: center; }
+  .name-left { text-align: center; }
+  .tags-list { justify-content: center; }
+  .drink-description { margin-inline: auto; }
+  .drink-image { order: -1; width: min(70vw, 280px); }
+  .instructions-and-fun { grid-template-columns: 1fr; }
+  .fun-fact { position: static; transform: none; }
+  .instructions-list-item { padding-left: 64px; }
 }

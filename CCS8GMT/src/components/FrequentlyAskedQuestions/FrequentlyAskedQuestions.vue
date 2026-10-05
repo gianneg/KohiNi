@@ -1,11 +1,12 @@
 <template>
     <div class="FAQBase">
+        <p class="faq-eyebrow">Got questions?</p>
         <h3 id="FAQTitle">Most Popular Questions</h3>
         <div class="FAQContainer" >  
             <div class="FAQQuestion" v-for="faq in FAQs":key="faq.id" :class="{'active': faq.showans }">
-                <p>{{ faq.Question }}<button class="FAQbtn" @click="ToggleDisplay(faq.id)" :class="{'BAct': faq.showans }">{{ faq.showans ? '&#9650;' : '&#9660;' }}</button></p>
+                <p class="FAQQ" @click="ToggleDisplay(faq.id)"><span>{{ faq.Question }}</span><button class="FAQbtn" :aria-expanded="!!faq.showans" aria-label="Toggle answer" :class="{'BAct': faq.showans }">{{ faq.showans ? '&#9650;' : '&#9660;' }}</button></p>
                 <div class="FAQAnswer" v-show="faq.showans">
-                    <p>{{ faq.Answer }} <button class="playbtn" @click="TTSPlay(faq.id)">▷</button></p>
+                    <p>{{ faq.Answer }} <button class="playbtn" aria-label="Read answer aloud" @click.stop="TTSPlay(faq.id)">▷ Listen</button></p>
                 </div>
             </div>
         </div>
@@ -68,5 +69,4 @@
 
 <style scoped>
     @import "./FrequentlyAskedQuestions.css";
-    @import "./FrequentlyAskedQuestionsMobile.css";
-</style>
+    </style>

@@ -38,5 +38,4 @@
 
 <style scoped>
     @import "./SiteMap.css";
-    @import "./SiteMapMobile.css";
 </style>

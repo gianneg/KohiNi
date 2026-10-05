@@ -46,11 +46,11 @@
         <div class="contact-info">
           <h3>Contact Information</h3>
           <div class="info-item">
-            <span class="icon phone-icon"></span>
+            <span class="icon" aria-hidden="true">&#9742;</span>
             <span>+01 234 567 89</span>
           </div>
           <div class="info-item">
-            <span class="icon email-icon"></span>
+            <span class="icon" aria-hidden="true">&#9993;</span>
             <span>contactus@kohini.com</span>
           </div>
         </div>
@@ -129,22 +129,7 @@
   
   <style scoped>
  @import '../assets/ContactUs.css';
- @import '../assets/ContactUsMobile.css';
 
-      .error {
-  color: red;
-  font-size: 0.9em;
-  margin-top: 4px;
-  display: block;
-  font-family: 'Poppins';
-}
-
-      .success {
-  color: green;
-  font-size: 0.95em;
-  margin-top: 10px;
-  font-family: 'Poppins';
-}
 
 
   </style>
