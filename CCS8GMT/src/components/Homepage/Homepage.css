@@ -346,10 +346,11 @@
     box-shadow: var(--shadow-soft);
     cursor: pointer;
     isolation: isolate;
+    overflow: hidden;
     transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out), opacity 0.8s var(--ease-out);
 }
 
-/* coffee-ring stain */
+/* coffee-ring stain (clipped to the card) */
 .card::before {
     content: "";
     position: absolute;
@@ -426,7 +427,7 @@
 /* little steam on hover */
 .card-steam {
     position: absolute;
-    top: -6px;
+    top: 4px;
     left: 50%;
     display: flex;
     gap: 8px;
