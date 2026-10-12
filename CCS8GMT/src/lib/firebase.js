@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "REDACTED",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: "ccs8-gmt.firebaseapp.com",
     projectId: "ccs8-gmt",
     storageBucket: "ccs8-gmt.firebasestorage.app",
